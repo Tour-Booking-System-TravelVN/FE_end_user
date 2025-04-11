@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 if (data.code == 0) {
                     let currentPath = window.location.pathname;
-                    let restrictedPages = ["/mytour.html", "/bookingdetail.html","/myinfo.html"];
+                    let restrictedPages = ["/mytour.html", "/bookingdetail.html","/myinfo.html","/success.html"];
 
                     if (restrictedPages.includes(currentPath)) {
                         window.location.href = "index.html"; // Chuyển về trang index
@@ -314,13 +314,13 @@ document.addEventListener('DOMContentLoaded', function () {
         })
 
         // Ngăn chặn submit form nếu không hợp lệ (vẫn giữ lại logic submit khi hợp lệ)
-        form.addEventListener('submit', function (event) {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-        }, false);
+        // form.addEventListener('submit', function (event) {
+        //     if (!form.checkValidity()) {
+        //         event.preventDefault();
+        //         event.stopPropagation();
+        //     }
+        //     form.classList.add('was-validated');
+        // }, false);
     })();
 
     (function () {
@@ -358,12 +358,12 @@ document.addEventListener('DOMContentLoaded', function () {
         })
 
         // Ngăn chặn submit form nếu không hợp lệ (vẫn giữ lại logic submit khi hợp lệ)
-        form.addEventListener('submit', function (event) {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-        }, false);
+        // form.addEventListener('submit', function (event) {
+        //     if (!form.checkValidity()) {
+        //         event.preventDefault();
+        //         event.stopPropagation();
+        //     }
+        //     form.classList.add('was-validated');
+        // }, false);
     })();
 });

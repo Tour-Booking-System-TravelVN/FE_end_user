@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>TravelVN - Đặt tour thất bại</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap&subset=vietnamese" rel="stylesheet"> -->
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style2.css">
+
+    <!-- Logo -->
+    <link rel="icon" href="img/logo_tour_no_text.svg">
+
+    <script src="lib/lightbox/js/jquery-3.7.1.min.js"></script>
+    <script type="module" src="js/main2.js"></script>
+    <script src="js/main3.js"></script>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Alert Start -->
+    <div class="alert alert-success alert-dismissible mb-0 d-none">
+        <button type="button" class="btn-close me-4" data-bs-dismiss="alert"></button>
+        <strong>Success!</strong> Indicates a successful or positive action.
+    </div>
+    <!-- Alert End -->
+    
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-primary px-5 d-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0 d-none d-lg-block">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i
+                            class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i
+                            class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i
+                            class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i
+                            class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="#"><i
+                            class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#register" class="header-unauth d-none"><small
+                            class="me-3 text-light"><i class="fa fa-user me-2"></i>Đăng
+                            ký</small></a>
+                    <!-- <div class="modal fade" id="register" aria-modal="true"> -->
+                    <div class="modal fade" id="register">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-5 d-flex justify-content-center align-items-center">
+                                            <img src="img/logo_tour.svg" alt="welcome" class="img-fluid"
+                                                style="height: 350px;">
+                                        </div>
+                                        <div class="col-7">
+                                            <button class="btn-close text-end" type="button"
+                                                data-bs-dismiss="modal"></button>
+                                            <h2 class="h1 text-center fw-bold text-primary">ĐĂNG KÝ</h2>
+
+                                            <!--Register Form Start-->
+                                            <form action="" class="needs-validation" id="registerForm">
+
+                                                <div class="text-start mx-2 mt-3">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" required
+                                                            id="floatingFullName" placeholder="Nguyễn Văn A">
+                                                        <label for="floatingFullName">Họ và tên</label>
+                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                        
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="email" class="form-control" id="floatingEmail"
+                                                            required placeholder="example@gmail.com">
+                                                        <label for="floatingEmail">Email</label>
+                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                        
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="date" class="form-control" id="floatingDob"
+                                                            required placeholder="Nguyễn Văn A">
+                                                        <label for="floatingDob">Ngày sinh</label>
+                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                        
+                                                    </div>
+                                                    <label for="optradio">Giới tính</label>
+                                                    <div class="d-flex mb-3 mt-1">
+                                                        <div class="form-check">
+                                                            <input type="radio" class="form-check-input" id="radio1"
+                                                                name="optradio" value="0" checked>Nam
+                                                            <label class="form-check-label" for="radio1"></label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input type="radio" class="form-check-input ms-3 me-2"
+                                                                id="radio2" name="optradio" value="1">Nữ
+                                                            <label class="form-check-label" for="radio2"></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="floatingUsername"
+                                                            required placeholder="Nguyễn Văn A">
+                                                        <label for="floatingUsername">Tên đăng nhập</label>
+                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                       
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="password" class="form-control" required
+                                                            id="floatingPassword" placeholder="Nguyễn Văn A">
+                                                        <label for="floatingPassword">Mật khẩu</label>
+                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                        
+                                                    </div>
+
+                                                    <!-- <label for="fullname" class="fst-italic letter-spacing-1 label-log">Họ và tên</label><br/>
+                                                <input type="text" name="fullname" id="fullname" class="w-100 rounded-3 py-2 ps-3 bg-light border-0"><br/>
+                                                <label for="email" class="fst-italic letter-spacing-1 mt-2 pt-1 label-log">Email</label><br/>
+                                                <input type="email" name="email" id="email" class="w-100 rounded-3 py-1 ps-2 border-0 bg-dark"><br/>
+                                                <label for="dob" class="fst-italic letter-spacing-1 mt-2 pt-1 label-log">Ngày sinh</label><br/>
+                                                <input type="date" name="dob" id="dob" class="w-100 rounded-3 py-1 ps-2"><br/>
+                                                <label for="gender" class="fst-italic letter-spacing-1 mt-2 pt-1 label-log">Giới tính</label><br/>
+                                                <input type="radio" name="gender" id="male" checked><span class="text-dark fs-6 ps-1">Nam</span>
+                                                <input type="radio" name="gender" id="female" class="ms-3"><span class="text-dark fs-6 ps-1">Nữ</span><br/>
+                                                <label for="username" class="fst-italic letter-spacing-1 mt-2 pt-1 label-log">Tên đăng nhập</label><br/>
+                                                <input type="text" name="username" id="username" class="w-100 rounded-3 py-1 ps-2"><br/>
+                                                <label for="password" class="fst-italic letter-spacing-1 mt-2 pt-1 ps-2 label-log">Mật khẩu</label><br/>
+                                                <input type="password" name="password" id="password" class="w-100 rounded-3 py-1"><br/><br/> -->
+                                            </form>
+                                            <!--Register Form End-->
+
+                                            <div class="d-grid mt-3">
+                                                <button type="button" class="btn btn-primary btn-block w-50 mx-auto"
+                                                    id="btnRegister">Đăng ký</button>
+                                            </div>
+                                            <p class="mt-3 text-primary">Bạn đã có tài khoản? <a
+                                                    class="fst-italic text-decoration-underline pointer"
+                                                    data-bs-dismiss="modal" data-bs-toggle="modal"
+                                                    data-bs-target="#login">Đăng nhập</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#"><small class="me-3 text-light header-unauth d-none" data-bs-toggle="modal"
+                        data-bs-target="#login"><i class="fa fa-sign-in-alt me-2"></i>Đăng
+                        nhập</small></a>
+
+                <div class="modal fade" id="login">
+                    <!-- <div class="modal fade" id="login" aria-modal="true"> -->
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-5 d-flex justify-content-center align-items-center">
+                                        <img src="img/logo_tour.svg" alt="welcome" class="img-fluid"
+                                            style="height: 350px;">
+                                    </div>
+                                    <div class="col-7">
+                                        <button class="btn-close text-end" type="button"
+                                            data-bs-dismiss="modal"></button>
+                                        <h2 class="h1 text-center fw-bold text-primary mb-3">ĐĂNG NHẬP</h2>
+
+                                        <!--Login Form Start-->
+                                        <form action="" class="needs-validation" id="loginForm" novalidate>
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="floatingUsernameLogin"
+                                                    required placeholder="Nguyễn Văn A">
+                                                <label for="floatingUsernameLogin">Tên đăng nhập</label>
+                                                <div class="invalid-feedback">Please fill out this field.</div>
+    
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="password" class="form-control" id="floatingPasswordLogin"
+                                                    required placeholder="">
+                                                <label for="floatingPasswordLogin">Mật khẩu</label>
+                                                <div class="invalid-feedback">Please fill out this field.</div>
+                                            </div>
+                                        </form>
+                                        <!--Register Form End-->
+
+                                        <div class="d-grid mt-3">
+                                            <button type="button" class="btn btn-primary btn-block w-50 mx-auto"
+                                                id="btnLogin">Đăng nhập</button>
+                                        </div>
+                                        <p class="text-primary text-start mt-3">Bạn chưa có tài khoản? <a
+                                                class="fst-italic text-decoration-underline pointer"
+                                                data-bs-dismiss="modal" data-bs-toggle="modal"
+                                                data-bs-target="#register">Đăng ký</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--d-none-->
+                <div class="dropdown d-none" id="header-auth">
+                    <a href="#" class="dropdown-toggle text-light" data-bs-toggle="dropdown"><small id="fullname"><i
+                                class="fa fa-home me-2"></i>Bảng điều khiển</small></a>
+                    <div class="dropdown-menu rounded">
+                        <a href="myinfo.html" class="dropdown-item"><i class="fas fa-user-alt me-2"></i>Thông tin cá
+                            nhân</a>
+                        <a href="mytour.html" class="dropdown-item"><i class="bi bi-airplane-engines-fill me-2"></i>Các
+                            tour
+                            của bạn</a>
+                        <a href="#" class="dropdown-item" id="btnLogout"><i class="fas fa-power-off me-2"></i>Đăng
+                            xuất</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 bg-third">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="m-0">
+                    <img src="img/logo_tour.svg" alt="Logo">
+                    <!-- <i class="fa fa-map-marker-alt me-3"></i> -->
+                    TravelVN
+                </h1>
+                <!-- <img src="img/logo.png" alt="Logo"> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Trang chủ</a>
+                    <a href="about.html" class="nav-item nav-link">Giới thiệu</a>
+                    <a href="services.html" class="nav-item nav-link">Dịch vụ</a>
+                    <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
+                </div>
+                <a href="foundtourlist.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Đặt ngay</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Info start -->
+    <div class="container-fluid increase-margin-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="img/booking-card.png" class="w-100 rotate-15 img-fluid">
+                </div>
+                <div class="col-7 ps-0 d-flex align-items-center justify-content-center">
+                    <h3 class="text-center text-danger fw-bold display-4">Thanh toán thất bại.</h3>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 mx-auto increase-margin-top">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-4 col-lg-4 col-xl-4">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Liên hệ</h4>
+                        <a href="#"><i class="fas fa-home me-2"></i> 298 Bắc Từ Liêm, Hà Nội</a>
+                        <a href="#"><i class="fas fa-envelope me-2"></i> travelvn@haui.com</a>
+                        <a href="#"><i class="fas fa-phone me-2"></i> 0343 857 961</a>
+                        <a href="#" class="mb-3"><i class="fas fa-print me-2"></i> 0247 814 592</a>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-share fa-2x text-white me-2"></i>
+                            <a class="btn-square btn btn-primary rounded-circle mx-1" href="#"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn-square btn btn-primary rounded-circle mx-1" href="#"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn-square btn btn-primary rounded-circle mx-1" href="#"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn-square btn btn-primary rounded-circle mx-1" href="#"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-4 col-lg-4 col-xl-4">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Doanh nghiệp</h4>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> About</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Careers</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Blog</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Press</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Magazine</a>
+                    </div>
+                </div> -->
+                <div class="col-md-4 col-lg-4 col-xl-4 ps-5">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Hỗ trợ</h4>
+                        <a href="index.html"><i class="fas fa-angle-right me-2"></i> Trang chủ</a>
+                        <a href="about.html"><i class="fas fa-angle-right me-2"></i> Giới thiệu</a>
+                        <a href="services.html"><i class="fas fa-angle-right me-2"></i> Dịch vụ</a>
+                        <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Liên hệ với chúng tôi</a>
+                        <!-- <a href=""><i class="fas fa-angle-right me-2"></i> Sitemap</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a> -->
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xl-4 ps-5">
+                    <div class="footer-item">
+                        <!-- <div class="row gy-3 gx-2 mb-4">
+                            <div class="col-xl-6">
+                                <form>
+                                    <div class="form-floating">
+                                        <select class="form-select bg-dark border" id="select1">
+                                            <option value="1">Arabic</option>
+                                            <option value="2">German</option>
+                                            <option value="3">Greek</option>
+                                            <option value="3">New York</option>
+                                        </select>
+                                        <label for="select1">English</label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-xl-6">
+                                <form>
+                                    <div class="form-floating">
+                                        <select class="form-select bg-dark border" id="select1">
+                                            <option value="1">USD</option>
+                                            <option value="2">EUR</option>
+                                            <option value="3">INR</option>
+                                            <option value="3">GBP</option>
+                                        </select>
+                                        <label for="select1">$</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div> -->
+                        <h4 class="text-white mb-3">Thanh toán</h4>
+                        <div class="footer-bank-card">
+                            <a href="#" class="text-white me-2"><i class="bi bi-qr-code-scan fa-2x"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fab fa-cc-amex fa-2x"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center d-flex justify-content-center">
+                <div
+                    class="col-md-6 text-center text-md-end mb-md-0 d-inline-flex justify-content-center align-items-center">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">TravelVN</a>, All right
+                    reserved.
+                </div>
+                <!-- <div class="col-md-6 text-center text-md-start">
+                        Designed By <a class="text-white" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a>
+                    </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i
+            class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!--Register-->
+    <script>
+        // var header_auth = document.getElementById("header-auth");
+
+        // document.getElementById('btnRegister').addEventListener('click',
+        //     function () {
+        //         let username = document.getElementById('floatingUsername').value;
+        //         let password = document.getElementById('floatingPassword').value;
+
+        //         let fullname = document.getElementById('floatingFullName').value.trim().split(' ');
+        //         let temp = document.getElementById('floatingFullName').value.trim();
+        //         let lastname = fullname.pop();
+        //         let firstname = fullname.join(' ');
+
+        //         let dob = document.getElementById('floatingDob').value;
+        //         let gender = parseInt(document.querySelector('input[name=optradio]:checked').value);
+
+        //         let c = { firstname: firstname, lastname: lastname, dob: dob, gender: gender };
+
+        //         let email = document.getElementById('floatingEmail').value;
+        //         let status = "OFF";
+
+        //         let useraccount = { username: username, password: password, c: c, status: status, email: email };
+
+        //         console.log(useraccount);
+        //         fetch('http://localhost:8080/register', {
+        //             method: 'POST',
+        //             headers: {
+        //                 'Content-Type': 'application/json'
+        //             },
+        //             body: JSON.stringify(
+        //                 useraccount
+        //             )
+        //         })
+        //             .then(response => response.json())
+        //             .then(data => {
+        //                 if (data.code == 0) {
+        //                     document.getElementById("register").addEventListener("hidden.bs.modal", function () {
+        //                         document.activeElement.blur(); // Bỏ focus khỏi phần tử đang focus
+        //                     });
+
+        //                     let modal = bootstrap.Modal.getInstance(document.getElementById("register")); // Lấy instance của modal
+        //                     modal.hide(); // Ẩn modal
+
+        //                     document.querySelectorAll('.header-unauth').forEach(element => {
+        //                         element.classList.add("d-none");
+        //                     });
+
+        //                     header_auth.classList.remove("d-none");
+
+        //                     document.getElementById('fullname').textContent = temp;
+
+        //                     localStorage.setItem("token", data.result.token);  // Lưu token vào localStorage
+        //                     // localStorage.setItem("fullname", fullname);  // Lưu thông tin người dùng vào localStorage
+        //                 }
+        //                 console.log("Data: ", data);
+        //             })
+        //             .catch((error) => {
+        //                 console.error('Error:', error);
+        //             });
+        //     });
+
+        // document.getElementById('btnLogout').addEventListener('click', function () {
+        //     fetch('http://localhost:8080/auth/logout', {
+        //         method: 'POST',
+        //         credentials: 'include',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify(
+        //             {}
+        //             // { "token": localStorage.getItem("token") }
+        //         )
+        //     })
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             if (data.code == 0) {
+        //                 // localStorage.removeItem("token");
+        //                 localStorage.removeItem("fullname");
+        //                 header_auth.classList.add("d-none");
+
+        //                 document.querySelectorAll('.header-unauth').forEach(element => {
+        //                     element.classList.remove("d-none");
+        //                 });
+
+        //                 document.querySelector("#header-auth").classList.add("d-none");
+
+        //             }
+        //             console.log("Data: ", data);
+        //         })
+        //         .catch((error) => {
+        //             console.error('Error:', error);
+        //         });
+        // });
+
+        // document.getElementById('btnLogin').addEventListener('click', function () {
+        //     let username = document.getElementById('floatingUsernameLogin').value;
+        //     let password = document.getElementById('floatingPasswordLogin').value;
+
+        //     fetch('http://localhost:8080/auth/token', {
+        //         method: 'POST',
+        //         credentials: 'include',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify(
+        //             { "username": username, "password": password }
+        //         )
+        //     })
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             if (data.code == 0) {
+        //                 document.getElementById("login").addEventListener("hidden.bs.modal", function () {
+        //                     document.activeElement.blur(); // Bỏ focus khỏi phần tử đang focus
+        //                 });
+
+        //                 let modal = bootstrap.Modal.getInstance(document.getElementById("login")); // Lấy instance của modal
+        //                 modal.hide(); // Ẩn modal                        
+
+        //                 document.querySelectorAll('.header-unauth').forEach(element => {
+        //                     element.classList.add("d-none");
+        //                 });
+        //                 header_auth.classList.remove("d-none");
+
+        //                 document.getElementById('fullname').textContent = data.result.fullname;
+
+        //                 // localStorage.setItem("token", data.result.token);  // Lưu token vào localStorage
+        //                 localStorage.setItem("fullname", data.result.fullname);  // Lưu thông tin người dùng vào localStorage
+        //             }
+        //             console.log("Status: ", data.status);
+        //             console.log("Code: ", data.code);
+        //             console.log("Data: ", data);
+        //         })
+        //         .catch((error) => {
+        //             console.error('Error:', error);
+        //         });
+        // });
+    </script>
+</body>
+
+</html>

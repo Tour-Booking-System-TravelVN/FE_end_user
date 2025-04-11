@@ -145,6 +145,8 @@ jQuery(function () {
     }
 
     function getPriceToCal(price) {
+        if (!discount) return Math.round(price); // không có discount thì giữ nguyên giá
+
         return Math.round((discount.discountUnit == "%") ?
             price * (1 - discount.discountValue / 100)
             :
@@ -316,7 +318,7 @@ jQuery(function () {
         toddlerQuant++;
         $('#quanTod').val(toddlerQuant);
         updateView();
-        
+
         let $item = $(ctb_box_item); // chuyển thành jQuery element
         $item.find("input").last().addClass('dobTBF'); // thêm class
         $('.toddler-box').append($item);
@@ -338,7 +340,7 @@ jQuery(function () {
         babyQuant++;
         $('#quanBaby').val(babyQuant);
         updateView();
-        
+
         let $item = $(ctb_box_item); // chuyển thành jQuery element
         $item.find("input").last().addClass('dobBBF'); // thêm class
         $('.baby-box').append($item);
@@ -395,36 +397,36 @@ jQuery(function () {
 
     function updateView() {
         if (childQuant == 0) {
-            if (!$('#child-line').hasClass('d-none')){
+            if (!$('#child-line').hasClass('d-none')) {
                 $('#child-line').addClass('d-none');
                 $('.child-box').addClass('d-none');
             }
         } else {
-            if ($('#child-line').hasClass('d-none')){
+            if ($('#child-line').hasClass('d-none')) {
                 $('#child-line').removeClass('d-none');
                 $('.child-box').removeClass('d-none');
-            }     
+            }
         }
 
         if (toddlerQuant == 0) {
-            if (!$('#toddler-line').hasClass('d-none')){
+            if (!$('#toddler-line').hasClass('d-none')) {
                 $('#toddler-line').addClass('d-none');
                 $('.toddler-box').addClass('d-none');
-            }   
+            }
         } else {
-            if ($('#toddler-line').hasClass('d-none')){
+            if ($('#toddler-line').hasClass('d-none')) {
                 $('#toddler-line').removeClass('d-none');
                 $('.toddler-box').removeClass('d-none');
-            }   
+            }
         }
 
         if (babyQuant == 0) {
-            if (!$('#baby-line').hasClass('d-none')){
+            if (!$('#baby-line').hasClass('d-none')) {
                 $('#baby-line').addClass('d-none');
                 $('.baby-box').addClass('d-none');
             }
         } else {
-            if ($('#baby-line').hasClass('d-none')){
+            if ($('#baby-line').hasClass('d-none')) {
                 $('#baby-line').removeClass('d-none');
                 $('.baby-box').removeClass('d-none');
             }
@@ -446,8 +448,151 @@ jQuery(function () {
         // console.log(privateRoomQuant);
         $('.quantPrivateRoom').text(privateRoomQuant);
 
-        totalPrice = (adultQuant * adultPrice) + (childQuant * childPrice) + (toddlerQuant * toddlerPrice) + (babyQuant * babyPrice) + (privateRoomQuant * privateRoomPrice);
+        totalPrice = Math.round((adultQuant * adultPrice) + (childQuant * childPrice) + (toddlerQuant * toddlerPrice) + (babyQuant * babyPrice) + (privateRoomQuant * privateRoomPrice));
         totalQuant = adultQuant + childQuant + toddlerQuant + babyQuant;
         $('#total').text(formatNumberWithDots(totalPrice) + " đ");
+    }
+
+    $('#btnContinue').click(function () {
+        //Tham số cơ bản để tạo thanh toán
+        let productName = tour.tourName;
+        let description = foundtour.tourUnitId;
+        let returnUrl = "http://127.0.0.1:5500/success.html";
+        let price = totalPrice;
+        let cancleUrl = "http://127.0.0.1:5500/cancel.html";
+
+        //Tham số lưu đặt tour
+        let arr1 = splitFullName($('#fullnameBF').val());
+        let firstname = arr1[0];
+        let lastname = arr1[1];
+
+        let dob = $('#dobBF').val();
+        let gender = $('#gender').val() === "1";
+        let phoneNumber = $('#phonenumber').val();
+        let address = $('#address').val();
+        let email = $('#emailBF').val();
+
+        let tourUnitId = foundtour.tourUnitId;
+        //Số người theo loại
+        //babyNumber
+        //toddlerNumber
+        //childNumber
+        //adultNumber
+        //privateRoomNumber
+
+        let note = $('#txtNotice').val();
+        //Không cần paymentId
+        //totalAmount
+
+        //Tạo mảng người đi cùng
+        let companions = [];
+
+        //Lấy ra table chứa các thông tin của người lớn
+        let adults = $('.adult-box').children('table');
+        adults.each((index, element) => {
+            //Chỉ lấy thông tin người thứ 2 là khách hàng đi cùng
+            if (index != 0) {
+                let fullnameC = $(element).find(".fullnameIBF").eq(0).val();
+                let arr = splitFullName(fullnameC);
+                let firstnameC = arr[0];
+                let lastnameC = arr[1];
+                let dobC = $(element).find('input[type="date"]').first().val();
+                let genderC = $(element).find("select").first().val() === "1";
+
+                let c = {
+                    "firstname": firstnameC,
+                    "lastname": lastnameC,
+                    "dob": dobC,
+                    "gender": genderC
+                }
+                companions.push({ "c": c });
+            }
+        })
+
+        //Lấy ra table chứa các thông tin của các khách hàng trẻ em, trẻ nhỏ, em bé
+        let others = $('.child-box, .toddler-box, .baby-box').children('table');
+        others.each((index, element) => {
+
+            let fullnameC = $(element).find(".fullnameIBF").eq(0).val();
+            let arr = splitFullName(fullnameC);
+            let firstnameC = arr[0];
+            let lastnameC = arr[1];
+            let dobC = $(element).find('input[type="date"]').first().val();
+            let genderC = $(element).find("select").first().val() === "1";
+
+            let c = {
+                "firstname": firstnameC,
+                "lastname": lastnameC,
+                "dob": dobC,
+                "gender": genderC
+            }
+            companions.push({ "c": c });
+
+        })
+
+        // companions = JSON.stringify(companions);
+
+        let bookingRequest = {
+            "c": {
+                "firstname": firstname,
+                "lastname": lastname,
+                "dob": dob,
+                "gender": gender,
+                "phoneNumber": phoneNumber,
+                "address": address,
+                "userAccount": {
+                    "email": email
+                },
+            },
+            "tourUnitId": tourUnitId,
+            "babyNumber": babyQuant,
+            "toddlerNumber": toddlerQuant,
+            "childNumber": childQuant,
+            "adultNumber": adultQuant,
+            "privateRoomNumber": privateRoomQuant,
+            "note": note,
+            "totalAmount": totalPrice,
+            "companions": companions
+        }
+
+        let data = {
+            "productName": productName,
+            "description": description,
+            "returnUrl": returnUrl,
+            "price": totalPrice,
+            "cancelUrl": cancleUrl,
+            "bookingRequest": bookingRequest
+        }
+
+        console.log(data);
+
+        fetch('http://localhost:8080/order/create', {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(
+                data
+            )
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error == 0) {
+                    window.location.href = data.data.checkoutUrl;
+                }
+                console.log("Data: ", data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    })
+
+    //Hàm tách tên
+    function splitFullName(fullName) {
+        fullName = fullName.trim().split(' ');
+        let lastname = fullName.pop();
+        let firstname = fullName.join(' ');
+        return [firstname, lastname];
     }
 })
