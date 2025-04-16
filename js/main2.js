@@ -23,62 +23,81 @@ document.addEventListener('DOMContentLoaded', function () {
             if (data.result.valid) {
                 authen();
                 return;
-            }
+            } 
 
             let fullname = localStorage.getItem('fullname');
             console.log('Fullname: ', fullname);
             //Không có fullname trong storage
             if (!fullname || fullname.trim() === "") {
+                let currentPath = window.location.pathname;
+                let restrictedPages = ["/mytour.html", "/bookingdetail.html", "/myinfo.html", "/success.html", "/bookingtour.html"];
+
+                if (restrictedPages.includes(currentPath)) {
+                    window.location.href = "index.html"; // Chuyển về trang index
+                } else {
+                    console.log("Không cần chuyển hướng.");
+                }
                 unauthen();
                 return;
             }
 
-            fetch('http://localhost:8080/auth/refresh', {
-                method: 'POST',
-                credentials: 'include',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({})
-            })
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data);
-                    if (data.result.role != 'CUSTOMER') {
-                        alert('Trang web chỉ dành cho khách hàng!');
-                        unauthen();
-                        return;
-                    }
-                    if (data.code != 0) {
-                        let currentPath = window.location.pathname;
-                        let restrictedPages = ["/mytour.html", "/bookingdetail.html", "/myinfo.html", "/success.html"];
+            // fetch('http://localhost:8080/auth/refresh', {
+            //     method: 'POST',
+            //     credentials: 'include',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify({})
+            // })
+            //     .then(response => response.json())
+            //     .then(data => {
+            //         console.log(data);
+            //         if (data.result.role != 'CUSTOMER') {
+            //             alert('Trang web chỉ dành cho khách hàng!');
+            //             unauthen();
+            //             return;
+            //         }
+            //         if (data.code != 0) {
+            //             let currentPath = window.location.pathname;
+            //             let restrictedPages = ["/mytour.html", "/bookingdetail.html", "/myinfo.html", "/success.html", "/bookingtour.html"];
 
-                        if (restrictedPages.includes(currentPath)) {
-                            window.location.href = "index.html"; // Chuyển về trang index
-                        }
-                    }
-                    // localStorage.setItem("token", data.result.token);  // Lưu token vào localStorage
-                    localStorage.setItem("fullname", data.result.fullname);  // Lưu thông tin người dùng vào localStorage
-                    authen();
-                })
-                .catch((error) => {
-                    console.error('Error1:', error);
-                    unauthen();
-                    // window.location.href = "index.html";
-                })
+            //             if (restrictedPages.includes(currentPath)) {
+            //                 window.location.href = "index.html"; // Chuyển về trang index
+            //             }
+            //         }
+            //         // localStorage.setItem("token", data.result.token);  // Lưu token vào localStorage
+            //         localStorage.setItem("fullname", data.result.fullname);  // Lưu thông tin người dùng vào localStorage
+            //         authen();
+            //     })
+            //     .catch((error) => {
+            //         console.error('Error1:', error);
+            //         unauthen();
+            //         // window.location.href = "index.html";
+            //     })
         })
         .catch((error) => {
             // window.location.href = "500.html";
+            let currentPath = window.location.pathname;
+            let restrictedPages = ["/mytour.html", "/bookingdetail.html", "/myinfo.html", "/success.html", "/bookingtour.html"];
+
+            if (restrictedPages.includes(currentPath)) {
+                window.location.href = "index.html"; // Chuyển về trang index
+            } else {
+                console.log("Không cần chuyển hướng.");
+            }
+
             console.error('Error2:', error);
             unauthen();
 
-            let fullname = localStorage.getItem('fullname');
-            console.log('Fullname: ', fullname);
-            //Không có fullname trong storage
-            if (!fullname || fullname.trim() === "") {
-                unauthen();
-                return;
-            }
+            // let fullname = localStorage.getItem('fullname');
+            // console.log('Fullname: ', fullname);
+            // //Không có fullname trong storage
+            // if (!fullname || fullname.trim() === "") {
+            //     unauthen();
+            //     return;
+            // }
+
+
 
             // fetch('http://localhost:8080/auth/refresh', {
             //     method: 'POST',
@@ -137,6 +156,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('btnRegister').addEventListener('click',
         function () {
+            if (!(document.getElementById('registerForm')?.checkValidity()) || document.querySelector('#registerForm .is-invalid')) return;
+
             let username = document.getElementById('floatingUsername').value;
             let password = document.getElementById('floatingPassword').value;
 
@@ -241,6 +262,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.getElementById('btnLogin').addEventListener('click', function () {
+        if (!(document.getElementById('loginForm')?.checkValidity()) || document.querySelector('#loginForm .is-invalid')) return;
+
         let username = document.getElementById('floatingUsernameLogin').value;
         let password = document.getElementById('floatingPasswordLogin').value;
 

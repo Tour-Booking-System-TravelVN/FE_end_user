@@ -24,6 +24,9 @@ $(function () {
                         toast2.show();
                         $('#btnCancelTour').addClass('d-none');
                         modal.hide();
+                        $('#status').text('Chờ hủy');
+                        $('#status').removeClass('text-success');
+                        $('#status').addClass('text-danger');
                     } else {
                         $('#toastPwd2').text("Có lỗi xảy ra. Không thể hủy tour.");
                         toast2.show();

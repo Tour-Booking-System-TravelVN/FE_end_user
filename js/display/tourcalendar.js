@@ -349,6 +349,8 @@ $(function () {
 
     //Hiển thị
     function displayRightSideAndPriceBox(tourChoiced) {
+        $('#discount').text(tourChoiced.discount.discountName);
+        console.log("DISCOUNT: ",tourChoiced.discount.discountName);
         let adultTourPrice = getPrice(tourChoiced.adultTourPrice, tourChoiced.discount);
         let toddlerTourPrice = getPrice(tourChoiced.toddlerTourPrice, tourChoiced.discount);
         let childTourPrice = getPrice(tourChoiced.childTourPrice, tourChoiced.discount);

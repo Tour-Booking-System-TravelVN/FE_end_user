@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    $('#btnFind').click(function () {
+    $('#btnFind, #btnBookNow').click(function () {
         let keywords = $('#keywords').val();
         let departure_date = $('#start_date').val();
         let price = $('#price').val();

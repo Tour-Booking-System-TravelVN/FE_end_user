@@ -66,8 +66,9 @@ jQuery(function () {
         index++;
     });
 
+    // $('#discount').text(discount.discountName);
 
-    let discount_tag = $('<div class="tour-offer bg-info fw-bold fs-5"></div>');
+    let discount_tag = $('<div class="tour-offer bg-info fw-bold fs-5" id="discount"></div>');
     discount_tag.text(discount.discountName);
     $('#carousel-list').append(discount_tag);
 

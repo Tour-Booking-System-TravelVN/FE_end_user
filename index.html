@@ -43,6 +43,10 @@
     <script type="module" src="js/display/hottours.js"></script>
     <script type="module" src="js/display/discountedtours.js"></script>
     <script type="module" src="js/display/newtours.js"></script>
+    
+    <script type="module" src="js/display/destinationtours.js"></script>
+    <script type="module" src="js/display/festivaltours.js"></script>
+    <script type="module" src="js/display/categorytours.js"></script>
 </head>
 
 <body>
@@ -270,7 +274,7 @@
                     <a href="services.html" class="nav-item nav-link">Dịch vụ</a>
                     <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
                 </div>
-                <a href="foundtourlist.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Đặt ngay</a>
+                <a href="foundtourlist.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4 btnBookNow">Đặt ngay</a>
             </div>
         </nav>
 
@@ -287,7 +291,7 @@
                         <img src="img/carousel-02.jpg" class="img-fluid" alt="Image">
                         <div class="carousel-caption">
                             <div class="p-3" style="max-width: 900px;">
-                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Khám phá
+                                <h4 class="text-white text-uppercase fw-bold mb-4 btnBookNow" style="letter-spacing: 3px;">Khám phá
                                     Việt Nam</h4>
                                 <h1 class="display-2 text-capitalize text-white mb-4">Cùng nhau du lịch khắp Việt Nam!
                                 </h1>
@@ -316,7 +320,7 @@
                                 </p>
                                 <div class="d-flex align-items-center justify-content-center">
                                     <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5"
-                                        href="#">Khám phá ngay</a>
+                                        href="foundtourlist.html">Khám phá ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -334,7 +338,7 @@
                                 </p>
                                 <div class="d-flex align-items-center justify-content-center">
                                     <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5"
-                                        href="#">Khám phá ngay</a>
+                                        href="foundtourlist.html">Khám phá ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -1523,9 +1527,9 @@
             // $('#btnFind, .btn-festival, .national-item, .destination-img').click(function () {
             //     window.location.href = "foundtourlist.html";
             // });
-            $('.btn-festival, .national-item, .destination-img').click(function () {
-                window.location.href = "foundtourlist.html";
-            });
+            // $('.national-item').click(function () {
+            //     // window.location.href = "foundtourlist.html";
+            // });
             $('.packages-item').click(function () {
                 window.location.href = 'tourunit.html';
             })
@@ -2443,7 +2447,6 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
-    Register
     <!-- <script>
         var header_auth = document.getElementById("header-auth");
 
