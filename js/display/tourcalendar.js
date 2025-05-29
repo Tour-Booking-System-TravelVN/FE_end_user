@@ -180,14 +180,14 @@ $(function () {
     
         // Thêm hàng tiêu đề các ngày trong tuần (Thứ 2 → Chủ nhật)
         $('.face-before').append(`
-            <div class="row pt-3 gap-3">
-                <div class="text-primary text-center fs-5 fw-bold col">T2</div>
-                <div class="text-primary text-center fs-5 fw-bold col">T3</div>
-                <div class="text-primary text-center fs-5 fw-bold col">T4</div>
-                <div class="text-primary text-center fs-5 fw-bold col">T5</div>
-                <div class="text-primary text-center fs-5 fw-bold col">T6</div>
-                <div class="text-primary text-center fs-5 fw-bold col">T7</div>
-                <div class="text-primary text-center fs-5 fw-bold col">CN</div>
+            <div class="row pb-3 pb-md-0 pt-3 g-0 gap-md-3">
+                <div class="text-primary text-center rfs-calendar fw-bold col">T2</div>
+                <div class="text-primary text-center rfs-calendar fw-bold col">T3</div>
+                <div class="text-primary text-center rfs-calendar fw-bold col">T4</div>
+                <div class="text-primary text-center rfs-calendar fw-bold col">T5</div>
+                <div class="text-primary text-center rfs-calendar fw-bold col">T6</div>
+                <div class="text-primary text-center rfs-calendar fw-bold col">T7</div>
+                <div class="text-primary text-center rfs-calendar fw-bold col">CN</div>
             </div>
         `);
     
@@ -234,14 +234,14 @@ $(function () {
     
         // ======= 4. Render lịch: chia thành các hàng 7 ngày (tương ứng 1 tuần) =======
         for (let i = 0; i < calendarCells.length; i += 7) {
-            let row = $('<div class="row pt-3 gap-3"></div>');
+            let row = $('<div class="row pt-0 pt-md-3 g-0 gap-md-3"></div>');
             for (let j = i; j < i + 7; j++) {
                 const cellInfo = calendarCells[j];
                 // Áp dụng class để phân biệt ngày hiện tại, ngày mờ (tháng khác)
                 let cls = cellInfo.muted ? 'text-muted' : 'text-dark';
     
                 row.append(`
-                    <div class="${cls} text-center fs-5 fw-bold col cell-day">
+                    <div class="${cls} text-center rfs-calendar fw-bold col cell-day">
                         ${cellInfo.day}
                         <p class="heading7 text-danger"><small></small></p>
                     </div>

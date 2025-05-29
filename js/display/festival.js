@@ -22,7 +22,7 @@ $(function () {
 
     function displayFestival(festival) {
         let item = $('<div class="text-center mx-2"></div>');
-        item.html(`<button class="btn btn-outline-primary rounded-pill py-2 my-1 btn-festival">${festival.festivalName}</button>`)
+        item.html(`<button class="btn btn-outline-primary rounded-pill py-2 my-1 btn-festival" style="min-width=250px;">${festival.festivalName}</button>`)
         $('.festival-carousel').append(item);
     }
 
@@ -55,10 +55,10 @@ $(function () {
                     items: 1
                 },
                 768: {
-                    items: 4
+                    items: 3
                 },
                 992: {
-                    items: 5
+                    items: 4
                 },
                 1200: {
                     items: 6

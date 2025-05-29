@@ -149,8 +149,9 @@ jQuery(function () {
     }
 
     function getPriceToCal(price) {
+        console.log(discount);
         if (!discount) return Math.round(price); // không có discount thì giữ nguyên giá
-
+        console.log("XUONG DAY");
         return Math.round((discount.discountUnit == "%") ?
             price * (1 - discount.discountValue / 100)
             :
@@ -180,14 +181,14 @@ jQuery(function () {
         <table class="table table-borderless adult-info-peace">
                                 <colgroup>
                                     <col style="width: 50%;">
-                                    <col style="width: 15%;">
-                                    <col style="width: 15%;">
+                                    <col style="width: 25%;">
+                                    <col style="width: 5%;">
                                     <col style="width: 20%;">
                                 </colgroup>
                                 <tr class="text-dark pb-0">
                                     <th class="pb-0">Họ tên</th>
-                                    <th class="pb-0 text-center">Giới tính</th>
-                                    <th class="pb-0 text-center">Ngày sinh</th>
+                                    <th class="pb-0 px-0 text-center">Giới tính</th>
+                                    <th class="pb-0 px-0 text-center">Ngày sinh</th>
                                     <th class="pb-0 text-center">Phòng đơn</th>
                                 </tr>
                                 <tr>
@@ -197,14 +198,14 @@ jQuery(function () {
                                             placeholder="Liên hệ" name="fullnameC">
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </td>
-                                    <td class="align-middle">
-                                        <select class="form-select border-0">
+                                    <td class="align-middle px-0">
+                                        <select class="form-select px-0 border-0">
                                             <option value="0" selected>Nam</option>
                                             <option value="1">Nữ</option>
                                         </select>
                                     </td>
-                                    <td class="align-middle">
-                                        <input type="date" name="dobC" class="form-control border-0 dobAIBF" required>
+                                    <td class="align-middle px-0">
+                                        <input type="date" name="dobC" class="form-control border-0 dobAIBF w-inp-80" required>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </td>
                                     <td class="align-middle">
@@ -212,7 +213,7 @@ jQuery(function () {
                                             class="form-check form-switch d-flex flex-column align-items-center justify-content-center ps-0">
                                             <input class="form-check-input mx-auto fs-4 singleRoom" type="checkbox"
                                                 name="darkmode" value="yes" checked>
-                                            <p class="text-dark fw-bold mt-2 mb-0 privateRoomPrice">${privateRoom} đ</p>
+                                            <p class="text-dark fw-bold mt-2 mb-0 privateRoomPrice">${privateRoom}</p>
                                         </div>
                                     </td>
                                 </tr>
@@ -223,29 +224,29 @@ jQuery(function () {
         `
     <table class="table table-borderless adult-info-peace">
                                         <colgroup>
-                                            <col style="width: 70%;">
-                                            <col style="width: 15%;">
-                                            <col style="width: 15%;">
+                                            <col style="width: 60%;">
+                                            <col style="width: 30%;">
+                                            <col style="width: 10%;">
                                         </colgroup>
                                         <tr class="text-dark pb-0">
-                                            <th class="pb-0">Họ tên</th>
-                                            <th class="pb-0 text-center">Giới tính</th>
-                                            <th class="pb-0 text-center">Ngày sinh</th>
+                                            <th class="pb-0 px-0">Họ tên</th>
+                                            <th class="pb-0 px-0 text-center">Giới tính</th>
+                                            <th class="pb-0 px-0 text-center">Ngày sinh</th>
                                         </tr>
                                         <tr>
-                                            <td class="align-middle">
+                                            <td class="align-middle px-0">
                                                 <input type="text"
                                                     class="form-control text-dark custom-info-input border-0 ps-0 fs-6 fullnameIBF" required
                                                     placeholder="Liên hệ" name="fullnameC">
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                             </td>
-                                            <td class="align-middle">
+                                            <td class="align-middle px-0">
                                                 <select class="form-select border-0">
                                                     <option value="0" selected>Nam</option>
                                                     <option value="1">Nữ</option>
                                                 </select>
                                             </td>
-                                            <td class="align-middle">
+                                            <td class="align-middle px-0">
                                                 <input type="date" name="dobC" class="form-control border-0" required>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                             </td>

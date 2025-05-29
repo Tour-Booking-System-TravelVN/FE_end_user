@@ -56,7 +56,7 @@
 
     <!-- Topbar Start -->
     <div class="container-fluid bg-primary px-5 d-block">
-        <div class="row gx-0">
+        <div class="row">
             <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i
@@ -81,7 +81,7 @@
                         <div class="modal-dialog modal-lg modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    <div class="row">
+                                    <div class="d-flex justify-content-between">
                                         <div class="col-5 d-flex justify-content-center align-items-center">
                                             <img src="img/logo_tour.svg" alt="welcome" class="img-fluid"
                                                 style="height: 350px;">
@@ -100,21 +100,21 @@
                                                             id="floatingFullName" placeholder="Nguyễn Văn A">
                                                         <label for="floatingFullName">Họ và tên</label>
                                                         <div class="invalid-feedback">Please fill out this field.</div>
-                                                        
+
                                                     </div>
                                                     <div class="form-floating mb-3">
                                                         <input type="email" class="form-control" id="floatingEmail"
                                                             required placeholder="example@gmail.com">
                                                         <label for="floatingEmail">Email</label>
                                                         <div class="invalid-feedback">Please fill out this field.</div>
-                                                        
+
                                                     </div>
                                                     <div class="form-floating mb-3">
                                                         <input type="date" class="form-control" id="floatingDob"
                                                             required placeholder="Nguyễn Văn A">
                                                         <label for="floatingDob">Ngày sinh</label>
                                                         <div class="invalid-feedback">Please fill out this field.</div>
-                                                        
+
                                                     </div>
                                                     <label for="optradio">Giới tính</label>
                                                     <div class="d-flex mb-3 mt-1">
@@ -134,14 +134,14 @@
                                                             required placeholder="Nguyễn Văn A">
                                                         <label for="floatingUsername">Tên đăng nhập</label>
                                                         <div class="invalid-feedback">Please fill out this field.</div>
-                                                       
+
                                                     </div>
                                                     <div class="form-floating mb-3">
                                                         <input type="password" class="form-control" required
                                                             id="floatingPassword" placeholder="Nguyễn Văn A">
                                                         <label for="floatingPassword">Mật khẩu</label>
                                                         <div class="invalid-feedback">Please fill out this field.</div>
-                                                        
+
                                                     </div>
 
                                                     <!-- <label for="fullname" class="fst-italic letter-spacing-1 label-log">Họ và tên</label><br/>
@@ -202,7 +202,7 @@
                                                     required placeholder="Nguyễn Văn A">
                                                 <label for="floatingUsernameLogin">Tên đăng nhập</label>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
-    
+
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input type="password" class="form-control" id="floatingPasswordLogin"
@@ -268,13 +268,13 @@
                     <a href="services.html" class="nav-item nav-link">Dịch vụ</a>
                     <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
                 </div>
-                <a href="" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Đặt ngay</a>
+                <a href="" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4" id="bookNow">Đặt ngay</a>
             </div>
         </nav>
     </div>
 
     <!--Search Bar Start-->
-    <div class="container-fluid search-bar position-relative increase-margin-top-2"
+    <div class="container-fluid search-bar position-relative increase-margin-top-2 d-none d-md-block"
         style="top: -50%; transform: translateY(-50%);">
         <div class="container">
             <div class="position-relative rounded-pill w-100 mx-auto px-5 py-4"
@@ -308,13 +308,45 @@
             </div>
         </div>
     </div>
+
+    <div class="card px-4 pt-4 pb-2 mx-2 mb-5 d-md-none">
+        <p class="text-primary fw-bold h3 text-center mb-3">Tìm kiếm tour</p>
+        <!-- .needs-validated .was-validated -->
+        <div class="row bg-white rounded-pill py-3">
+            <div class="col-12">
+                <label class="fs-6 fw-bold text-dark">Bạn muốn đi đâu?</label><br />
+                <input type="text" name="keywords" id="keywords2" class="mt-1 py-1 w-100 custom-input"
+                    placeholder="Tuyên Quang" required>
+            </div>
+            <div class="col-12 ps-2 pt-2">
+                <label class="fs-6 fw-bold text-dark">Ngày đi</label><br />
+                <input type="date" name="start_date" id="start_date2" class="mt-1 py-1 w-100 custom-input"
+                    placeholder="29/03/2025" required>
+            </div>
+            <div class="col-12 pt-2">
+                <label class="heading5 text-dark fs-6">Ngân sách</label><br />
+                <select class="form-select border-0 text-dark ps-0 w-100" aria-label="Chọn ngân sách" id="price2">
+                    <option value="0-5000000" selected="selected">Dưới 5 triệu</option>
+                    <option value="5000000-10000000">Từ 5 triệu đến 10 triệu</option>
+                    <option value="10000000-20000000">Từ 10 triệu đến 20 triệu</option>
+                    <option value="20000000-Infinity">Trên 20 triệu</option>
+                </select>
+            </div>
+
+            <div class="d-flex justify-content-center gap-2 mt-3">
+                <button type="button" class="btn btn-outline-danger" style="width: 30%;"
+                    data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-outline-primary" style="width: 30%;" id="btnFind2">Tìm</button>
+            </div>
+        </div>
+    </div>
     <!--Search Bar End-->
 
     <!--Body Start-->
-    <div class="container-fluid decrease-margin mb-5">
+    <div class="container-fluid decrease-margin mb-5 mt-1">
         <div class="container">
             <div class="row">
-                <div class="col-3">
+                <div class="col-xl-3 col-12 mb-4 mb-xl-0">
                     <div class="card-body bg-light rounded-2 shadow px-2 filter-box">
                         <h4 class="text-center fw-bold">BỘ LỌC TÌM KIẾM</h4>
                         <label class="form-label text-dark fw-bold ms-1 mt-3 mb-1">Điểm đi:</label>
@@ -346,19 +378,23 @@
                         <label class="form-label text-dark fw-bold ms-1 mt-3 mb-0">Phương tiện</label>
                         <div class="row mt-1">
                             <div class="col-6">
-                                <input name="vehicle" type="checkbox" class="btn-check" id="btn-check-1" value="Ô tô" autocomplete="off">
+                                <input name="vehicle" type="checkbox" class="btn-check" id="btn-check-1" value="Ô tô"
+                                    autocomplete="off">
                                 <label class="btn btn-outline-primary w-100" for="btn-check-1">Ô tô</label>
                             </div>
                             <div class="col-6">
-                                <input name="vehicle" type="checkbox" class="btn-check" id="btn-check-2" value="Máy bay" autocomplete="off">
+                                <input name="vehicle" type="checkbox" class="btn-check" id="btn-check-2" value="Máy bay"
+                                    autocomplete="off">
                                 <label class="btn btn-outline-primary w-100" for="btn-check-2">Máy bay</label>
                             </div>
                             <div class="col-6">
-                                <input name="vehicle" type="checkbox" class="btn-check" id="btn-check-3" value="Tàu hỏa" autocomplete="off">
+                                <input name="vehicle" type="checkbox" class="btn-check" id="btn-check-3" value="Tàu hỏa"
+                                    autocomplete="off">
                                 <label class="btn btn-outline-primary w-100 mt-2" for="btn-check-3">Tàu hỏa</label>
                             </div>
                             <div class="col-6">
-                                <input name="vehicle" type="checkbox" class="btn-check" id="btn-check-4" value="Thuyền" autocomplete="off">
+                                <input name="vehicle" type="checkbox" class="btn-check" id="btn-check-4" value="Thuyền"
+                                    autocomplete="off">
                                 <label class="btn btn-outline-primary w-100 mt-2" for="btn-check-4">Thuyền</label>
                             </div>
                         </div>
@@ -374,9 +410,9 @@
                         </script> -->
                     </div>
                 </div>
-                <div class="col-9">
+                <div class="col-xl-9 col-12">
                     <h3 class="text-primary fw-bold text-uppercase" id="rs">Có 0 kết quả phù hợp</h3>
-                    <div id="card-list">
+                    <div id="card-list" class="row d-flex justify-content-md-evenly w-100">
                         <!-- <div class="card shadow-primary mb-4" style="height: 260px;">
                             <div class="d-flex h-100">
                                 <div class="packages-img rounded-0 img-filter h-100 w-30">
@@ -845,17 +881,18 @@
             tours = result.result;
 
             let index = 0;
-            for(let tour of tours){
+            for (let tour of tours) {
                 displayTourCard(tour);
                 index++;
-                if(index == 20) break;
+                if (index == 20) break;
             }
             // tours.forEach(tour => {
             //     displayTourCard(tour)
             // });
 
+            //row
             function displayTourCard(tour) {
-                let card = $('<div class="card shadow-primary mb-4" style="height: 280px;"></div>');
+                let card = $('<div class="col-12 col-md-5 col-lg-5 col-xl-12 card shadow-primary mb-4 fix-height" style="min-height: 280px;"></div>');
 
                 // const placesToVisit = tour.tour.placesToVisit;
 
@@ -875,24 +912,27 @@
 
                 let adultTourPrice = formatNumberWithDots(Math.round(tour.adultTourPrice));
 
+                tourName = splitString(tourName, 90);
+
+                //d-flex  h-100
                 const htmlToInsert = `
-                <div class="d-flex h-100">
-                    <div class="packages-img rounded-0 img-filter h-100 w-30 img-lg-width">
-                        <img class="card-img-top object-fit-cover h-100" src="${tour.tour.firstImageUrl}"
+                <div class="row">
+                    <div class="col-12 col-xl-3 packages-img rounded-0 img-filter h-lg-100 w-30 img-lg-width pe-0 ps-0">
+                        <img class="card-img-top object-fit-cover w-30" src="${tour.tour.firstImageUrl}"
                                             alt="Card image">
                                         <span class="d-block text-primary bg-white rounded-2 tag-img px-3 py-2">${tour.tour.category.categoryName}</span>
-                                    </div>
-                                    <div class="card-content my-2 mx-3 w-100">
+                    </div>
+                    <div class="col-12 col-xl card-content px-3 mt-3 mt-lg-3 px-lg-2 my-lg-2 w-md-100">
                                         <h5 class="text-primary fw-bold text-justify py-0 my-0 tour-title-lite">${tourName}</h5>
-                                        <div class="d-flex justify-content-between py-0 my-2">
+                                        <div class="d-xl-flex justify-content-between py-0 my-2">
                                             <div class="d-flex">
                                                 <i class="bi bi-ticket-fill text-primary me-2"></i>
-                                                <p class="heading5 text-primary fw-bold py-0 my-0">${tour.tourUnitId}
+                                                <p class="fs-6 text-primary fw-bold py-0 my-0">${tour.tourUnitId}
                                                 </p>
                                             </div>
-                                            <div class="d-flex">
+                                            <div class="d-flex mt-2 mt-lg-0">
                                                 <i class="bi bi-life-preserver text-primary me-2"></i>
-                                                <p class="heading5 text-primary fw-bold py-0 my-0">${tour.festival.festivalName}</p>
+                                                <p class="fs-6 text-primary fw-bold py-0 my-0">${tour.festival.festivalName}</p>
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-between py-0 my-0">
@@ -901,7 +941,7 @@
                                         </div>
                                         <p class="mb-2 heading6 text-dark pt-0"><i class="bi bi-geo-alt-fill me-2"></i><span
                                                 class="text-dark">${tour.tour.departurePlace}</span></p>
-                                        <div class="d-flex justify-content-between">
+                                        <div class="d-xl-flex justify-content-between">
                                             <p class="mb-2 heading6 text-dark pt-0"><i
                                                     class="bi bi-flag-fill me-2"></i><span class="text-dark">${placesToVisitSub}</span></p>
                                             <p
@@ -912,7 +952,7 @@
                                             <p class="mb-2 heading6 text-dark pt-0"><i class="bi bi-amd me-2"></i>
                                                 <span class="text-primary span-bold">Còn ${tour.availableCapacity} chỗ</span>
                                             </p>
-                                            <p class="heading3 text-end text-primary">${price} đ</p>
+                                            <p class="heading-price text-end text-primary">${price} đ</p>
                                         </div>
                                     </div>
                                 </div>
@@ -934,6 +974,7 @@
                 //     detailFull.textContent = `Chi tiết: ${tour.details}`;
                 //     detailBox.style.display = 'block';
                 // });
+                // let cardContainer = $('<div class="col-12 col-md-6 col-lg-12"></div>');
                 $('#card-list').append(card);
                 // tourList.appendChild(card);
             }
@@ -953,6 +994,13 @@
 
                 // Sử dụng toLocaleString để định dạng với dấu chấm phân cách hàng nghìn
                 return number.toLocaleString('vi-VN');
+            }
+
+            function splitString(s, len) {
+                if (s.length > len) {
+                    return s.substring(0, len) + '...'
+                }
+                return s;
             }
         })
 

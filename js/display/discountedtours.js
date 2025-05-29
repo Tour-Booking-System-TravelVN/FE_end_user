@@ -35,7 +35,7 @@ $(function () {
 
         let discountPrice = getPrice(tourUnit.adultTourPrice, tourUnit.discount)
         let tourName = tour.tourName;
-        tourName = splitString(tourName, 90);
+        tourName = splitString(tourName, 80);
 
         let item = `
             <div class="packages-item rounded shadow-primary mb-3 me-3">

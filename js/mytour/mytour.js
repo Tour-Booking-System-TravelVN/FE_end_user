@@ -68,9 +68,9 @@ $(function () {
         let returnDate = formatDate(tourUnit.returnDate);
         let totalAmount = formatNumberWithDots(booking.totalAmount);
 
-        let tourName = splitString(tour.tourName, 100);
+        let tourName = splitString(tour.tourName, 70);
 
-        const item = $(`<div class="col-4 px-2 mt-2"></div>`);
+        const item = $(`<div class="col-12 col-md-6 col-lg-4 px-2 mt-2"></div>`);
         item.append(`
                 <div class="card shadow-primary">
                     <div class="packages-img">
@@ -79,14 +79,14 @@ $(function () {
                     </div>
 
                     <div class="card-body">
-                        <h5 class="mb-3 text-primary fw-bold text-justify">${tourName}</h5>
+                        <h5 class="mb-3 text-primary fw-bold text-justify tour-title-lite">${tourName}</h5>
                         <div class="d-flex justify-content-between pb-0 mb-0">
                             <div class="d-flex">
                                 <i class="bi bi-ticket-fill text-primary me-2"></i>
                                 <p class="heading5 text-primary fw-bold">${tourUnit.tourUnitId}</p>
                             </div>
                             <div class="d-flex">
-                                <i class="bi bi-ticket-perforated-fill rotate-45 text-primary me-2"></i>
+                                <i class="bi bi-ticket-perforated-fill rotate-45 text-primary me-2 me-lg-4 me-xl-2"></i>
                                 <p class="heading5 text-primary fw-bold">${booking.bookingId}</p>
                             </div>
                         </div>

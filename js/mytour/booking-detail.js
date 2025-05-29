@@ -45,7 +45,7 @@ $(function () {
 
         $('#carousel-list').append(carousel_item);
 
-        let thumbnail_item = $('<div class="h-100" style="width: 150px;"></div>');
+        let thumbnail_item = $('<div class="h-100 owl-thumb"></div>');
         thumbnail_item.html(`
                 <img src="${img.url}" class="thumbnail-img object-fit-cover w-100 h-100 ${activeClass}"
                                     data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${index}">
@@ -352,7 +352,7 @@ $(function () {
             responsiveClass: false,
             responsive: {
                 0: {
-                    items: 2
+                    items: 1
                 },
                 768: {
                     items: 3

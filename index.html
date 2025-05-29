@@ -43,7 +43,7 @@
     <script type="module" src="js/display/hottours.js"></script>
     <script type="module" src="js/display/discountedtours.js"></script>
     <script type="module" src="js/display/newtours.js"></script>
-    
+
     <script type="module" src="js/display/destinationtours.js"></script>
     <script type="module" src="js/display/festivaltours.js"></script>
     <script type="module" src="js/display/categorytours.js"></script>
@@ -106,21 +106,21 @@
                                                             id="floatingFullName" placeholder="Nguyễn Văn A">
                                                         <label for="floatingFullName">Họ và tên</label>
                                                         <div class="invalid-feedback">Please fill out this field.</div>
-                                                        
+
                                                     </div>
                                                     <div class="form-floating mb-3">
                                                         <input type="email" class="form-control" id="floatingEmail"
                                                             required placeholder="example@gmail.com">
                                                         <label for="floatingEmail">Email</label>
                                                         <div class="invalid-feedback">Please fill out this field.</div>
-                                                        
+
                                                     </div>
                                                     <div class="form-floating mb-3">
                                                         <input type="date" class="form-control" id="floatingDob"
                                                             required placeholder="Nguyễn Văn A">
                                                         <label for="floatingDob">Ngày sinh</label>
                                                         <div class="invalid-feedback">Please fill out this field.</div>
-                                                        
+
                                                     </div>
                                                     <label for="optradio">Giới tính</label>
                                                     <div class="d-flex mb-3 mt-1">
@@ -140,14 +140,14 @@
                                                             required placeholder="Nguyễn Văn A">
                                                         <label for="floatingUsername">Tên đăng nhập</label>
                                                         <div class="invalid-feedback">Please fill out this field.</div>
-                                                       
+
                                                     </div>
                                                     <div class="form-floating mb-3">
                                                         <input type="password" class="form-control" required
                                                             id="floatingPassword" placeholder="Nguyễn Văn A">
                                                         <label for="floatingPassword">Mật khẩu</label>
                                                         <div class="invalid-feedback">Please fill out this field.</div>
-                                                        
+
                                                     </div>
 
                                                     <!-- <label for="fullname" class="fst-italic letter-spacing-1 label-log">Họ và tên</label><br/>
@@ -208,7 +208,7 @@
                                                     required placeholder="Nguyễn Văn A">
                                                 <label for="floatingUsernameLogin">Tên đăng nhập</label>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
-    
+
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input type="password" class="form-control" id="floatingPasswordLogin"
@@ -274,7 +274,8 @@
                     <a href="services.html" class="nav-item nav-link">Dịch vụ</a>
                     <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
                 </div>
-                <a href="foundtourlist.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4 btnBookNow">Đặt ngay</a>
+                <a href="foundtourlist.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4 btnBookNow">Đặt
+                    ngay</a>
             </div>
         </nav>
 
@@ -291,7 +292,8 @@
                         <img src="img/carousel-02.jpg" class="img-fluid" alt="Image">
                         <div class="carousel-caption">
                             <div class="p-3" style="max-width: 900px;">
-                                <h4 class="text-white text-uppercase fw-bold mb-4 btnBookNow" style="letter-spacing: 3px;">Khám phá
+                                <h4 class="text-white text-uppercase fw-bold mb-4 btnBookNow"
+                                    style="letter-spacing: 3px;">Khám phá
                                     Việt Nam</h4>
                                 <h1 class="display-2 text-capitalize text-white mb-4">Cùng nhau du lịch khắp Việt Nam!
                                 </h1>
@@ -358,7 +360,8 @@
     </div>
 
     <!--Search Bar Start-->
-    <div class="container-fluid search-bar position-relative" style="top: -50%; transform: translateY(-50%);">
+    <div class="container-fluid search-bar position-relative d-none d-md-block"
+        style="top: -50%; transform: translateY(-50%);">
         <div class="container">
             <div class="position-relative rounded-pill w-100 mx-auto px-5 py-4"
                 style="background: rgba(19, 53, 123, 0.8);">
@@ -388,10 +391,63 @@
                     placeholder="Ví dụ: Hà Nội"> -->
                 <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2"
                     style="top: 50%; right: 46px; transform: translateY(-50%);" id="btnFind">Tìm kiếm</button>
+            </div>
 
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center d-md-none container-fluid search-bar position-relative"
+        style="top: -50%; transform: translateY(-50%);">
+        <button class="btn btn-danger rounded-pill px-3 m-2" style="width: 250px; height: 50px;" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">Tìm kiếm tour</button>
+
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body px-4 pt-4 pb-2">
+                    <p class="text-primary fw-bold h3 text-center mb-3">Tìm kiếm tour</p>
+                    <!-- .needs-validated .was-validated -->
+                    <div class="row bg-white rounded-pill py-3">
+                        <div class="col-12">
+                            <label class="fs-6 fw-bold text-dark">Bạn muốn đi đâu?</label><br />
+                            <input type="text" name="keywords" id="keywords2" class="mt-1 py-1 w-100 custom-input"
+                                placeholder="Tuyên Quang" required>
+                        </div>
+                        <div class="col-12 ps-2 pt-2">
+                            <label class="fs-6 fw-bold text-dark">Ngày đi</label><br />
+                            <input type="date" name="start_date" id="start_date2" class="mt-1 py-1 w-100 custom-input"
+                                placeholder="29/03/2025" required>
+                        </div>
+                        <div class="col-12 pt-2">
+                            <label class="heading5 text-dark fs-6">Ngân sách</label><br />
+                            <select class="form-select border-0 text-dark ps-0 w-100"
+                                aria-label="Chọn ngân sách" id="price2">
+                                <option value="0-5000000" selected="selected">Dưới 5 triệu</option>
+                                <option value="5000000-10000000">Từ 5 triệu đến 10 triệu</option>
+                                <option value="10000000-20000000">Từ 10 triệu đến 20 triệu</option>
+                                <option value="20000000-Infinity">Trên 20 triệu</option>
+                            </select>
+                        </div>
+
+                        <div class="d-flex justify-content-center gap-2 mt-3">
+                            <button type="button" class="btn btn-outline-danger" style="width: 30%;"
+                                data-bs-dismiss="modal">Hủy</button>
+                            <button type="button" class="btn btn-outline-primary" style="width: 30%;"
+                                id="btnFind2">Tìm</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer sticky-bottom bg-white"></div> -->
             </div>
         </div>
     </div>
+
     <!--Search Bar End-->
     <!-- Navbar & Hero End -->
 
@@ -810,7 +866,8 @@
                         <div class="row g-4">
                             <div class="col-lg-6">
                                 <div class="destination-img h-100">
-                                    <img class="img-fluid rounded h-100 object-fit-cover" src="img/location/HaNoi/HoHoanKiem.webp" alt="">
+                                    <img class="img-fluid rounded h-100 object-fit-cover"
+                                        src="img/location/HaNoi/HoHoanKiem.webp" alt="">
                                     <div class="destination-overlay p-4">
                                         <a href="#" class="h4 text-white mb-2 mt-3">Hồ Hoàn Kiếm<i
                                                 class="fa fa-arrow-right ms-2"></i></a>
@@ -823,7 +880,8 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="destination-img h-100">
-                                    <img class="img-fluid rounded h-100 object-fit-cover" src="img/location/HaNoi/VanMieu.jpg" alt="">
+                                    <img class="img-fluid rounded h-100 object-fit-cover"
+                                        src="img/location/HaNoi/VanMieu.jpg" alt="">
                                     <div class="destination-overlay p-4">
                                         <a href="#" class="h4 text-white mb-2 mt-3">Văn Miếu - Quốc Tử Giám<i
                                                 class="fa fa-arrow-right ms-2"></i></a>
@@ -840,10 +898,11 @@
                         <div class="row g-4">
                             <div class="col-lg-6">
                                 <div class="destination-img h-100">
-                                    <img class="img-fluid rounded h-100 object-fit-cover" src="img/location/TuyenQuang/TanTrao.jpg" alt="">
+                                    <img class="img-fluid rounded h-100 object-fit-cover"
+                                        src="img/location/TuyenQuang/TanTrao.jpg" alt="">
                                     <div class="destination-overlay p-4">
                                         <a href="#" class="h4 text-white mb-2 mt-3">Tân Trào
-                                                <i class="fa fa-arrow-right ms-2"></i></a>
+                                            <i class="fa fa-arrow-right ms-2"></i></a>
                                     </div>
                                     <!-- <div class="search-icon">
                                         <a href="img/destination-5.jpg" data-lightbox="destination-5"><i
@@ -853,7 +912,8 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="destination-img h-100">
-                                    <img class="img-fluid rounded h-100 object-fit-cover" src="img/location/TuyenQuang/NaHang-LamBinh.jpg" alt="">
+                                    <img class="img-fluid rounded h-100 object-fit-cover"
+                                        src="img/location/TuyenQuang/NaHang-LamBinh.jpg" alt="">
                                     <div class="destination-overlay p-4">
                                         <a href="#" class="h4 text-white mb-2 mt-3">Na Hàng - Lâm Bình<i
                                                 class="fa fa-arrow-right ms-2"></i></a>
@@ -870,7 +930,8 @@
                         <div class="row g-4">
                             <div class="col-lg-6">
                                 <div class="destination-img h-100">
-                                    <img class="img-fluid rounded h-100 object-fit-cover" src="img/location/DaNang/CauVang.webp" alt="">
+                                    <img class="img-fluid rounded h-100 object-fit-cover"
+                                        src="img/location/DaNang/CauVang.webp" alt="">
                                     <div class="destination-overlay p-4">
                                         <a href="#" class="h4 text-white mb-2 mt-3">Cầu Vàng<i
                                                 class="fa fa-arrow-right ms-2"></i></a>
@@ -883,7 +944,8 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="destination-img h-100">
-                                    <img class="img-fluid rounded h-100 object-fit-cover" src="img/location/DaNang/BaiBienMyKhe.webp" alt="">
+                                    <img class="img-fluid rounded h-100 object-fit-cover"
+                                        src="img/location/DaNang/BaiBienMyKhe.webp" alt="">
                                     <div class="destination-overlay p-4">
                                         <a href="#" class="h4 text-white mb-2 mt-3">Bãi biển Mỹ Khê<i
                                                 class="fa fa-arrow-right ms-2"></i></a>
@@ -900,7 +962,8 @@
                         <div class="row g-4">
                             <div class="col-lg-6">
                                 <div class="destination-img h-100">
-                                    <img class="img-fluid rounded h-100 object-fit-cover" src="img/location/NhaTrang/VinWonder.jpg" alt="">
+                                    <img class="img-fluid rounded h-100 object-fit-cover"
+                                        src="img/location/NhaTrang/VinWonder.jpg" alt="">
                                     <div class="destination-overlay p-4">
                                         <a href="#" class="h4 text-white mb-2 mt-3">VinWonder<i
                                                 class="fa fa-arrow-right ms-2"></i></a>
@@ -913,7 +976,8 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="destination-img h-100">
-                                    <img class="img-fluid rounded h-100 object-fit-cover" src="img/location/NhaTrang/ThapBaPonagar.jpeg" alt="">
+                                    <img class="img-fluid rounded h-100 object-fit-cover"
+                                        src="img/location/NhaTrang/ThapBaPonagar.jpeg" alt="">
                                     <div class="destination-overlay p-4">
                                         <a href="#" class="h4 text-white mb-2 mt-3">Tháp bà Pagonar<i
                                                 class="fa fa-arrow-right ms-2"></i></a>
@@ -930,7 +994,8 @@
                         <div class="row g-4">
                             <div class="col-lg-6">
                                 <div class="destination-img h-100">
-                                    <img class="img-fluid rounded h-100 object-fit-cover" src="img/location/CanTho/ChoDemTayDo.jpg" alt="">
+                                    <img class="img-fluid rounded h-100 object-fit-cover"
+                                        src="img/location/CanTho/ChoDemTayDo.jpg" alt="">
                                     <div class="destination-overlay p-4">
                                         <a href="#" class="h4 text-white mb-2 mt-3">Chợ đêm Tây Đô<i
                                                 class="fa fa-arrow-right ms-2"></i></a>
@@ -943,7 +1008,8 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="destination-img h-100">
-                                    <img class="img-fluid rounded h-100 object-fit-cover" src="img/location/CanTho/ChuaOng.jpg" alt="">
+                                    <img class="img-fluid rounded h-100 object-fit-cover"
+                                        src="img/location/CanTho/ChuaOng.jpg" alt="">
                                     <div class="destination-overlay p-4">
                                         <a href="#" class="h4 text-white mb-2 mt-3">Chùa Ông<i
                                                 class="fa fa-arrow-right ms-2"></i></a>
@@ -993,7 +1059,8 @@
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-4">
                             <div class="national-item h-100">
-                                <img src="img/explore-tour-1.jpg" class="img-fluid h-100 rounded object-fit-cover" alt="Image">
+                                <img src="img/explore-tour-1.jpg" class="img-fluid h-100 rounded object-fit-cover"
+                                    alt="Image">
                                 <div class="national-content">
                                     <div class="national-info">
                                         <h5 class="text-white text-uppercase mb-2">Tour du lịch núi</h5>
@@ -1008,7 +1075,8 @@
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="national-item h-100">
-                                <img src="img/explore-tour-2.jpg" class="img-fluid h-100 rounded object-fit-cover" alt="Image">
+                                <img src="img/explore-tour-2.jpg" class="img-fluid h-100 rounded object-fit-cover"
+                                    alt="Image">
                                 <div class="national-content">
                                     <div class="national-info">
                                         <h5 class="text-white text-uppercase mb-2">Tour du lịch mạo hiểm</h5>
@@ -1023,7 +1091,8 @@
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="national-item h-100">
-                                <img src="img/explore-tour-3.jpg" class="img-fluid w-100 h-100 rounded object-fit-cover" alt="Image">
+                                <img src="img/explore-tour-3.jpg" class="img-fluid w-100 h-100 rounded object-fit-cover"
+                                    alt="Image">
                                 <div class="national-content">
                                     <div class="national-info">
                                         <h5 class="text-white text-uppercase mb-2">Tour du lịch sinh thái</h5>
@@ -1039,7 +1108,8 @@
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="national-item h-100">
-                                <img src="img/explore-tour-4.jpg" class="img-fluid h-100 rounded object-fit-cover" alt="Image">
+                                <img src="img/explore-tour-4.jpg" class="img-fluid h-100 rounded object-fit-cover"
+                                    alt="Image">
                                 <div class="national-content">
                                     <div class="national-info">
                                         <h5 class="text-white text-uppercase mb-2">Tour du lịch văn hóa</h5>
@@ -1070,7 +1140,8 @@
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="national-item h-100">
-                                <img src="img/explore-tour-6.jpg" class="img-fluid h-100 rounded object-fit-cover" alt="Image">
+                                <img src="img/explore-tour-6.jpg" class="img-fluid h-100 rounded object-fit-cover"
+                                    alt="Image">
                                 <div class="national-content">
                                     <div class="national-info">
                                         <h5 class="text-white text-uppercase mb-2">Tour du lịch biển</h5>
@@ -1088,7 +1159,8 @@
                 <div id="InternationalTab-2" class="tab-pane fade show p-0">
                     <div class="InternationalTour-carousel owl-carousel">
                         <div class="international-item">
-                            <img src="img/explore-tour-1.jpg" class="img-fluid h-100 rounded object-fit-cover" alt="Image">
+                            <img src="img/explore-tour-1.jpg" class="img-fluid h-100 rounded object-fit-cover"
+                                alt="Image">
                             <div class="international-content">
                                 <div class="international-info">
                                     <h5 class="text-white text-uppercase mb-2">Australia</h5>
@@ -1104,7 +1176,8 @@
                             </div>
                         </div>
                         <div class="international-item">
-                            <img src="img/explore-tour-2.jpg" class="img-fluid h-100 rounded object-fit-cover" alt="Image">
+                            <img src="img/explore-tour-2.jpg" class="img-fluid h-100 rounded object-fit-cover"
+                                alt="Image">
                             <div class="international-content">
                                 <div class="international-info">
                                     <h5 class="text-white text-uppercase mb-2">Germany</h5>
@@ -1178,8 +1251,9 @@
         <div class="container py-5">
             <div class="mx-auto text-center mt-2 mb-5" style="max-width: 900px;">
                 <h5 class="section-title px-3">CÁC TOUR HOT</h5>
-                <h4 class="position-absolute" style="left: 50%; transform: translateX(-50%);"><a href="foundtourlist.html"
-                        class="text-decoration-underline fw-bold" id="more-ht">Xem thêm</a></h4>
+                <h4 class="position-absolute" style="left: 50%; transform: translateX(-50%);"><a
+                        href="foundtourlist.html" class="text-decoration-underline fw-bold" id="more-ht">Xem thêm</a>
+                </h4>
             </div>
             <div class="packages-carousel owl-carousel" id="hottours-caro">
                 <!-- <div class="packages-item rounded shadow-primary mb-3 me-3">
@@ -1318,8 +1392,9 @@
         <div class="container py-5">
             <div class="mx-auto text-center mt-2 mb-5" style="max-width: 900px;">
                 <h5 class="section-title px-3">CÁC TOUR ƯU ĐÃI</h5>
-                <h4 class="position-absolute" style="left: 50%; transform: translateX(-50%);"><a href="foundtourlist.html"
-                        class="text-decoration-underline fw-bold" id="more-dt">Xem thêm</a></h4>
+                <h4 class="position-absolute" style="left: 50%; transform: translateX(-50%);"><a
+                        href="foundtourlist.html" class="text-decoration-underline fw-bold" id="more-dt">Xem thêm</a>
+                </h4>
             </div>
             <div class="packages-carousel owl-carousel" id="discountedtours-caro">
                 <!-- <div class="packages-item rounded shadow-primary mb-3 me-3">
@@ -1424,8 +1499,9 @@
         <div class="container py-5">
             <div class="mx-auto text-center mt-2 mb-5" style="max-width: 900px;">
                 <h5 class="section-title px-3">CÁC TOUR MỚI</h5>
-                <h4 class="position-absolute" style="left: 50%; transform: translateX(-50%);"><a href="foundtourlist.html"
-                        class="text-decoration-underline fw-bold" id="more-nt">Xem thêm</a></h4>
+                <h4 class="position-absolute" style="left: 50%; transform: translateX(-50%);"><a
+                        href="foundtourlist.html" class="text-decoration-underline fw-bold" id="more-nt">Xem thêm</a>
+                </h4>
             </div>
             <div class="packages-carousel owl-carousel" id="newtours-caro">
                 <!-- <div class="packages-item rounded shadow-primary mb-3 me-3">

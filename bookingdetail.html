@@ -271,8 +271,8 @@
     <div class="container-fluid">
         <div class="container">
             <div class="row gap">
-                <div class="col-8">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"
+                <div class="col-12 col-lg-8">
+                    <div id="carouselExampleIndicators" class="d-none d-md-block carousel slide" data-bs-ride="carousel"
                         data-bs-interval="3000">
                         <!-- <div class="carousel-indicators" id="carousel-btn">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -312,7 +312,7 @@
                     </div>
 
                     <!-- Danh sách Thumbnail -->
-                    <div class="mt-3 mb-5 d-flex gap-3 sm-img-carousel owl-carousel" style="height: 80px;"
+                    <div class="mt-3 mb-5 d-flex gap-3 sm-img-carousel owl-carousel owl-sm-thumb-height"
                         id="carousel-thumbnail">
                         <!-- <div class="h-100" style="width: 150px;">
                             <img src="img/destination/DaNang.webp"
@@ -412,8 +412,8 @@
                     </script> -->
 
                     <!-- Schedule Start-->
-                    <div class="mt-5 pt-5">
-                        <h3 class="text-center text-primary text-uppercase fw-bold mt-3 mb-4">Thông tin đặt tour</h3>
+                    <div class="mt-0 mt-lg-5 pt-0 pt-lg-5">
+                        <h3 class="text-center text-primary text-uppercase fw-bold mt-0 mt-lg-3 mb-4">Thông tin đặt tour</h3>
                         <div class="row">
 
                             <!-- <script>
@@ -427,44 +427,43 @@
 
                             <div class="card-body col-9 shadow rounded">
                                 <!-- Calendar Info Start -->
-                                <div class="face-after">
+                                <div class="face-after" style="height: 538px;">
+                                    <div class="d-flex justify-content-between pt-3 align-items-center">
+                                        <p class="text-dark fw-bold fs-4" id="back"><i
+                                                class="bi bi-arrow-left fw-bold me-2"></i>Quay lại</p>
+                                        <p class="date-start text-danger fs-2" id="departure-date">27/03/2025</p>
+                                    </div>
+                                    <p class="text-primary text-center fs-3 mt-1 mb-4">Giá tour</p>
                                     <div class="row">
-                                        <div class="col border-end border-dark">
+                                        <div class="col-12 col-md-6 border-md-end border-dark">
                                             <table class="table table-borderless my-2">
                                                 <colgroup>
-                                                    <col style="width: 60%;">
-                                                    <col style="width: 40%;">
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
                                                 </colgroup>
                                                 <tr>
-                                                    <td class="text-dark">
+                                                    <td class="text-dark pe-0">
                                                         <span class="fw-bold">Người lớn</span>
                                                         <p><small>(Từ 10 tuổi trở lên)</small></p>
                                                     </td>
-                                                    <td class="text-end text-danger fw-bold tag-price">
-                                                        <span class="adultTourPrice">12.580.000 đ</span>
-                                                        <p class="text-primary"><small id="aQ">x 1</small></p>
-                                                    </td>
-
+                                                    <td class="text-end text-danger fw-bold tag-price adultTourPrice ps-0">
+                                                        12.580.000 đ</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-dark">
+                                                    <td class="text-dark pe-0">
                                                         <span class="fw-bold">Trẻ em</span>
                                                         <p><small>(Từ 5 đến 9 tuổi)</small></p>
                                                     </td>
-                                                    <td class="text-end text-danger fw-bold tag-price">
-                                                        <span id="childTourPrice">8.580.000 đ</span>
-                                                        <p class="text-primary"><small id="cQ">x 0</small></p>
-                                                    </td>
+                                                    <td class="text-end text-danger fw-bold tag-price"
+                                                        id="childTourPrice">8.580.000 đ</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-dark">
+                                                    <td class="text-dark pb-0">
                                                         <span class="fw-bold">Trẻ nhỏ</span>
                                                         <p><small>(Từ 2 đến 4 tuổi)</small></p>
                                                     </td>
-                                                    <td class="text-end text-danger fw-bold tag-price">
-                                                        <span id="toddlerTourPrice">6.580.000 đ</span>
-                                                        <p class="text-primary"><small id="tQ">x 0</small></p>
-                                                    </td>
+                                                    <td class="text-end text-danger fw-bold tag-price pb-0"
+                                                        id="toddlerTourPrice">6.580.000 đ</td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -475,23 +474,19 @@
                                                     <col style="width: 40%;">
                                                 </colgroup>
                                                 <tr>
-                                                    <td class="text-dark">
+                                                    <td class="text-dark pt-0 pt-md-1">
                                                         <span class="fw-bold">Em bé</span>
                                                         <p><small>(Dưới 2 tuổi)</small></p>
                                                     </td>
-                                                    <td class="text-end text-danger fw-bold tag-price">
-                                                        <span id="babyTourPrice">0 đ</span>
-                                                        <p class="text-primary"><small id="bQ">x 0</small></p>
-                                                    </td>
+                                                    <td class="text-end text-danger fw-bold tag-price pt-0"
+                                                        id="babyTourPrice">0 đ</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-dark">
                                                         <span class="fw-bold">Phụ thu phòng đơn</span>
                                                     </td>
-                                                    <td class="text-end text-danger fw-bold tag-price">
-                                                        <span id="privateRoomPrice">1.000.000 đ</span>
-                                                        <p class="text-primary"><small id="pQ">x 0</small></p>
-                                                    </td>
+                                                    <td class="text-end text-danger fw-bold tag-price"
+                                                        id="privateRoomPrice">1.000.000 đ</td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -519,31 +514,31 @@
                     <!-- Schedule End -->
 
                     <!-- Additional Information Start -->
-                    <div class="mt-5 pt-5">
-                        <h3 class="text-center text-primary text-uppercase fw-bold mt-3 mb-4">Thông tin thêm về tour
+                    <div class="mt-2 mt-lg-5 pt-5">
+                        <h3 class="text-center text-primary text-uppercase fw-bold mt-1 mt-xl-3 mb-4">Thông tin thêm về tour
                         </h3>
                         <div class="row">
                             <div class="col d-flex flex-column align-items-center">
                                 <i class="bi bi-people-fill text-primary fa-5x pb-0"></i>
-                                <span class="text-primary fs-4 fw-bold decrease-margin-lg-15">Đối tượng thích hợp</span>
-                                <span class="text-dark fs-4 fw-bold text-center" id="targetAudience">Thanh niên</span>
+                                <span class="text-primary rfs-add-info text-center fw-bold decrease-margin-lg-15">Đối tượng thích hợp</span>
+                                <span class="text-dark rfs-add-info fw-bold text-center" id="targetAudience">Thanh niên</span>
                             </div>
                             <div class="col d-flex flex-column align-items-center">
                                 <i class="bi bi-flower1 text-primary fa-5x pb-0"></i>
-                                <span class="text-primary fs-4 fw-bold decrease-margin-lg-15">Ẩm thực</span>
-                                <span class="text-dark fs-4 fw-bold text-center" id="cuisine">Gỏi cá Nam Ô</span>
+                                <span class="text-primary rfs-add-info text-center fw-bold decrease-margin-lg-15">Ẩm thực</span>
+                                <span class="text-dark rfs-add-info fw-bold text-center" id="cuisine">Gỏi cá Nam Ô</span>
                             </div>
                             <div class="col d-flex flex-column align-items-center">
                                 <i class="bi bi-clock-fill text-primary fa-5x pb-0"></i>
-                                <span class="text-primary fs-4 fw-bold decrease-margin-lg-15">Thời gian lý tưởng</span>
-                                <span class="text-dark fs-4 fw-bold text-center" id="idealTime">Quanh năm</span>
+                                <span class="text-primary rfs-add-info text-center fw-bold decrease-margin-lg-15">Thời gian lý tưởng</span>
+                                <span class="text-dark rfs-add-info fw-bold text-center" id="idealTime">Quanh năm</span>
                             </div>
                         </div>
                     </div>
                     <!-- Additional Information End -->
 
                     <!-- Additional Information 2 Start -->
-                    <div class="mt-5 pt-5">
+                    <div class="mt-2 mt-lg-5 pt-5">
                         <h3 class="text-center text-primary text-uppercase fw-bold mt-3 mb-4">Trải nghiệm thú vị trong
                             tour</h3>
                         <div class="shadow card-body rounded">
@@ -562,21 +557,21 @@
                     <!-- Additional Information 2 End -->
 
                     <!-- Additional Information 2 Start -->
-                    <div class="mt-5 pt-5" id="noti-div">
+                    <div class="mt-2 mt-lg-5 pt-5" id="noti-div">
                         <h3 class="text-center text-primary text-uppercase fw-bold mt-3 mb-4">Thông tin cần lưu ý</h3>
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs mb-2">
                             <li class="nav-item">
-                                <a class="nav-link active" data-bs-toggle="tab" href="#tab1">Tour bao gồm</a>
+                                <a class="nav-link mini-note px-2 px-md-3 active" data-bs-toggle="tab" href="#tab1">Tour <span class="d-none d-md-inline-block">bao</span> gồm</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#tab2">Tour không bao gồm</a>
+                                <a class="nav-link mini-note px-1 px-md-3" data-bs-toggle="tab" href="#tab2">Tour không <span class="d-none d-md-inline-block">bao</span> gồm</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#tab3">Hướng dẫn viên</a>
+                                <a class="nav-link mini-note px-1 px-md-3" data-bs-toggle="tab" href="#tab3">Hướng dẫn viên</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#tab4">Ghi chú</a>
+                                <a class="nav-link mini-note px-1 px-md-3" data-bs-toggle="tab" href="#tab4">Ghi chú</a>
                             </li>
                         </ul>
 
@@ -622,7 +617,7 @@
                     <!-- Additional Information 2 End -->
 
                     <!-- Tour Programs Start -->
-                    <div class="mt-5 pt-5">
+                    <div class="mt-2 mt-lg-5 pt-5">
                         <h3 class="text-center text-primary text-uppercase fw-bold mt-3 mb-4">Chương trình
                             tour</h3>
                         <div class="accordion accordion-flush" id="accordionTourPrograms"></div>
@@ -631,7 +626,7 @@
 
                     <!--Ở đây-->
                     <!-- Companion Customers Start-->
-                    <div class="mt-5 pt-5">
+                    <div class="mt2 mt-lg-5 pt-5">
                         <h3 class="text-center text-primary text-uppercase fw-bold mt-3 mb-4">Khách hàng đi cùng</h3>
                         <div class="row gap-1" id="companions">
                             <!-- <div class="card-body rounded-1 text-primary fs-5 fw-bold border border-primary mb-2 col-5">
@@ -674,7 +669,7 @@
                 </div>
 
                 <!--Right Side Start-->
-                <div class="col-4">
+                <div class="col-12 col-lg-4 mx-0 mt-5 mt-lg-0">
                     <div class="card-body bg-white rounded shadow px-3">
                         <span class="text-primary h3 fw-bold pt-2 pb-1 d-block">Tổng tiền thanh toán:</span>
                         <p class="text-danger h1 fw-bold letter-spacing-2 ps-2" style="letter-spacing: 1px;"

@@ -39,6 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 unauthen();
                 return;
+            } else {
+                unauthen();
+                return;
             }
 
             // fetch('http://localhost:8080/auth/refresh', {

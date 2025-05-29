@@ -298,7 +298,9 @@ input[type=number].quantity:focus {
 }
 
 .w-30 {
-  width: 45%;
+  width: 100%;
+  min-height: 280px;
+  max-height: 280px;
 }
 
 .filter-box {
@@ -308,7 +310,7 @@ input[type=number].quantity:focus {
   /*z-index: 1000; /* Đảm bảo nó nằm trên các phần tử khác */
 }
 
-.alert{
+.alert {
   position: sticky;
   top: 0px;
   z-index: 1000000;
@@ -346,7 +348,7 @@ carousel-item-70 {
   opacity: 0.4 !important;
 }
 
-.img-lg-width{
+.img-lg-width {
   min-width: 400px;
   max-width: 400px;
 }
@@ -356,7 +358,7 @@ carousel-item-70 {
 }
 
 .tour-title {
-  min-height: 4em;
+  min-height: 4.5em;
   white-space: normal;
   word-break: break-word;
 }
@@ -367,7 +369,78 @@ carousel-item-70 {
   word-break: break-word;
 }
 
+.tour-title-3 {
+  min-height: 3em;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.mini-note {
+  font-size: 16px;
+}
+
+.rfs-booking {
+  font-size: 20px;
+}
+
+.heading-price {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.fix-height {
+  height: 280px;
+}
+
+.owl-sm-thumb-height {
+  height: 100px;
+}
+
+.owl-thumb {
+  height: 200px;
+}
+
+.rfs-calendar {
+  font-size: 20px;
+}
+
+.rfs-add-info {
+  font-size: 24px;
+}
+
+/* .w-tab{
+  min-width: 300px;
+} */
+@media(max-width: 1395px) {
+  .heading-price {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .fix-height {
+    height: auto;
+  }
+
+  .img-lg-width {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .rfs-add-info {
+    font-size: 20px;
+  }
+}
+
 @media(max-width: 768px) {
+  .fix-height {
+    height: auto;
+  }
+
+  .heading-price {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
   #note-tourguide {
     font-size: 16px;
   }
@@ -406,12 +479,46 @@ carousel-item-70 {
   .heading5 {
     font-size: 14px;
   }
+
+  .rfs-booking {
+    font-size: 20px;
+  }
+
+  .mini-note {
+    font-size: 12px;
+  }
+
+  .w-30 {
+    width: 100%;
+  }
+
+  .img-lg-width {
+    min-width: 100%;
+    height: 150px;
+  }
+
+  .rfs-add-info {
+    font-size: 14px;
+  }
+
+  .owl-sm-thumb-height {
+    height: 300px;
+  }
+
+  .owl-thumb {
+    height: 250px;
+  }
 }
 
 @media(max-width: 576px) {
   /* .heading3 {
     font-size: 24px;
   }*/
+
+  .heading-price {
+    font-size: 24px;
+    font-weight: bold;
+  }
 
   .heading4 {
     font-size: 18px;
@@ -420,4 +527,44 @@ carousel-item-70 {
   .heading5 {
     font-size: 11px;
   }
+
+  .mini-note {
+    font-size: 12px;
+  }
+
+  .rfs-booking {
+    font-size: 16px;
+  }
+
+  .img-lg-width {
+    min-width: 100%;
+    height: 200px;
+  }
+
+  .owl-sm-thumb-height {
+    height: 300px;
+  }
+
+  .owl-thumb {
+    height: 250px;
+  }
+
+  .rfs-calendar {
+    font-size: 14px;
+  }
+}
+
+@media(max-width: 320px) {
+  .w-30 {
+    width: 100%;
+  }
+
+  .mini-note {
+    font-size: 10px;
+  }
+
+  .w-inp-80 {
+    width: 80px;
+  }
+
 }
