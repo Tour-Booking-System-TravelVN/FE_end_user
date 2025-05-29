@@ -1005,7 +1005,7 @@
                         <div class="d-flex gap-1 my-2 pb-2">
                             <a href="#target-section" class="btn btn-outline-danger py-2 " style="width: 40%;" id="btnOtherDays">Ngày
                                 khác</a>
-                            <button class="btn btn-danger" id="btn-book " style="width: 60%;">Đặt ngay</button>
+                            <button class="btn btn-danger" id="btn-book" style="width: 60%;">Đặt ngay</button>
 
                             <script>
                                 jQuery(function () {
@@ -1017,6 +1017,7 @@
                                     params.append("tourUnitId", tourUnitId);
                                     const apiUrlWithParams = `${baseUrl}?${params.toString()}`;
                                     $('#btn-book').click(function () {
+                                        console.log("CLICK BOOK");
                                         fetch(apiUrlWithParams, {
                                             method: 'GET',
                                             credentials: 'include',
