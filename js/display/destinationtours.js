@@ -17,7 +17,8 @@ $(function () {
                 if (data.code == 0) {
                     localStorage.setItem("foundtours", JSON.stringify(data));
                     sessionStorage.setItem('tourstemp', JSON.stringify(data.result));
-                    window.location.href = "foundtourlist.html";
+                    localStorage.setItem("index", true);
+                    window.location.href = "foundtourlist.html?keywords="+encodeURIComponent(destination)+"&price="+encodeURIComponent("0-Infinity");
                 }
             })
             .catch((error) => {

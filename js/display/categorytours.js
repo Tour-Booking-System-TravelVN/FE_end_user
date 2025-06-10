@@ -16,7 +16,8 @@ $(function () {
                 if (data.code == 0) {
                     localStorage.setItem('foundtours', JSON.stringify(data));
                     sessionStorage.setItem('tourstemp', JSON.stringify(data.result));
-                    window.location.href = "foundtourlist.html";
+                    localStorage.setItem("index", true);
+                    window.location.href = "foundtourlist.html?type=4&category="+encodeURIComponent(categoryName);
                 }
             })
             .catch(error => {
@@ -40,7 +41,8 @@ $(function () {
                 if (data.code == 0) {
                     localStorage.setItem('foundtours', JSON.stringify(data));
                     sessionStorage.setItem('tourstemp', JSON.stringify(data.result));
-                    window.location.href = "foundtourlist.html";
+                    localStorage.setItem("index", true);
+                    window.location.href = "foundtourlist.html?type=4&category="+encodeURIComponent(categoryName);
                 }
             })
             .catch(error => {

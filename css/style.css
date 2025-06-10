@@ -8,11 +8,11 @@
     z-index: 99999;
 }
 
-#spinner.show {
+/* #spinner.show {
     transition: opacity .5s ease-out, visibility 0s linear 0s;
     visibility: visible;
     opacity: 1;
-}
+} */
 /*** Spinner End ***/
 
 .back-to-top {
@@ -129,7 +129,7 @@
 
 
 /*** Topbar Start ***/
-.fixed-top .container {
+/* .fixed-top .container {
     transition: 0.5s;
 }
 
@@ -146,14 +146,14 @@
 .topbar a:hover,
 .topbar a i:hover {
     color: var(--bs-secondary) !important;
-}
+} */
 
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .topbar {
         display: none;    
     }
-}
+} */
 /*** Topbar End ***/
 
 
@@ -196,16 +196,16 @@
     max-height: 45px;
 }
 
-.navbar .dropdown-toggle::after {
+/* .navbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     vertical-align: middle;
     margin-left: 8px;
-}
+} */
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
     .navbar .nav-item .dropdown-menu {
         display: block;
         visibility: hidden;
@@ -217,9 +217,9 @@
         transition: .5s;
         opacity: 0;
     }
-}
+} */
 
-.dropdown .dropdown-menu a:hover {
+/* .dropdown .dropdown-menu a:hover {
     background: var(--bs-primary);
     color: var(--bs-white);
 }
@@ -230,7 +230,7 @@
     background: var(--bs-light);
     transition: .5s;
     opacity: 1;
-}
+} */
 
 @media (max-width: 991.98px) {
     .sticky-top.navbar-light {
@@ -302,9 +302,9 @@
         left: 1px;
     }
 
-    .navbar-light .navbar-nav .nav-link.nav-contact::before {
+    /* .navbar-light .navbar-nav .nav-link.nav-contact::before {
         display: none;
-    }
+    } */
 }
 
 /*** Carousel Hero Header Start ***/
@@ -437,6 +437,7 @@
 /*** Services Start ***/
 .service .service-content-inner {
     transition: 0.5s;
+    min-height: 280px;
 }
 .service .service-content-inner:hover {
     position: relative;
@@ -473,7 +474,7 @@
     transition: 0.3s;
 }
 
-.destination .tab-class .tab-content .tab-pane .destination-img .search-icon {
+/* .destination .tab-class .tab-content .tab-pane .destination-img .search-icon {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -491,7 +492,7 @@
 .destination .tab-class .tab-content .tab-pane .destination-img .search-icon a i {
     opacity: 0;
     transition: 0.5s;
-}
+} */
 
 .destination .tab-class .nav-item {
     padding: 0 0 20px 0;
@@ -588,7 +589,7 @@
     transform: scale(1.3);
 }
 
-.packages .packages-item .packages-img .packages-price {
+/* .packages .packages-item .packages-img .packages-price {
     position: absolute;
     width: 100px; 
     top: 0; 
@@ -600,7 +601,7 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px; 
     z-index: 5;
-}
+} */
 
 .packages .packages-carousel {
     position: relative;
@@ -646,7 +647,7 @@
 
 
 /*** Explore Tour Start ***/
-.ExploreTour .tab-class .nav-item {
+/* .ExploreTour .tab-class .nav-item {
     padding: 0 0 20px 0;
 }
 .ExploreTour .tab-class .nav-item a.active {
@@ -655,7 +656,7 @@
 
 .ExploreTour .tab-class .nav-item a.active span {
     color: var(--bs-white) !important;
-}
+} */
 
 
 /* National Tour Start */
@@ -719,7 +720,7 @@
 }
 
 /* International Tour Start */
-.ExploreTour #InternationalTab-2 .international-item {
+/* .ExploreTour #InternationalTab-2 .international-item {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
@@ -731,9 +732,9 @@
 
 .ExploreTour #InternationalTab-2 .international-item:hover img {
     transform: scale(1.2);
-}
+} */
 
-.ExploreTour #InternationalTab-2 .international-item .tour-offer {
+/* .ExploreTour #InternationalTab-2 .international-item .tour-offer {
     position: absolute;
     top: -1px;
     left: -1px;
@@ -780,10 +781,10 @@
 
 .ExploreTour #InternationalTab-2 .international-item:hover .international-plus-icon {
     opacity: 1;
-}
+} */
 
 /* carousel Start */
-.ExploreTour #InternationalTab-2 .InternationalTour-carousel .international-item {
+/* .ExploreTour #InternationalTab-2 .InternationalTour-carousel .international-item {
     position: relative;
     overflow: hidden;
 }
@@ -805,17 +806,17 @@
     border: 1px solid var(--bs-primary);
     border-radius: 10px;
     transition: 0.5s;
-}
+} */
 
-.ExploreTour #InternationalTab-2 .InternationalTour-carousel .owl-dot.active {
+/* .ExploreTour #InternationalTab-2 .InternationalTour-carousel .owl-dot.active {
     width: 40px;
     background: var(--bs-primary);
-}
+} */
 /*** Explore Tour End ***/
 
 
 /*** Gallery Start ***/
-.gallery .gallery-item {
+/* .gallery .gallery-item {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
@@ -884,12 +885,12 @@
 
 .gallery .tab-class .nav-item a.active span {
     color: var(--bs-white) !important;
-}
+} */
 
 /*** Gallery End ***/
 
 /*** Tour Booking Start ***/
-.booking {
+/* .booking {
     background: linear-gradient(rgba(19, 53, 123, .8), rgba(19, 53, 123, .8)), url(../img/tour-booking-bg.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -924,14 +925,14 @@
 .booking .container form .btn.btn-primary:hover {
     box-shadow: inset 800px 0 0 0 var(--bs-light) !important;
     color: var(--bs-primary) !important;
-}
+} */
 
 
 
 /*** Tour Booking end ***/
 
 /*** Travel Guide Start ***/
-.guide .guide-item .guide-img {
+/* .guide .guide-item .guide-img {
     position: relative;
 }
 
@@ -1016,12 +1017,12 @@
 
 .guide .guide-item:hover .guide-title .guide-title-inner h4 {
     color: var(--bs-white);
-}
+} */
 /*** Travel Guide End ***/
 
 
 /*** Blog Start ***/
-.blog .blog-item .blog-img {
+/* .blog .blog-item .blog-img {
     position: relative;
 }
 
@@ -1084,11 +1085,11 @@
 
 .blog .blog-item .blog-img:hover .blog-img-inner img {
     transform: scale(1.2);
-}
+} */
 /*** Blog End ***/
 
 /*** Testimonial Start ***/
-.testimonial .testimonial-carousel {
+/* .testimonial .testimonial-carousel {
     position: relative;
 }
 
@@ -1174,22 +1175,22 @@
     border: 3px solid var(--bs-white); 
     border-style: dotted;
     transition: 0.5s;
-}
+} */
 /*** Testimonial End ***/
 
 /*** Contact Start ***/
-.contact .container form .btn.btn-primary {
+/* .contact .container form .btn.btn-primary {
     box-shadow: inset 0 0 0 0 var(--bs-primary);
 }
 
 .contact .container form .btn.btn-primary:hover {
     box-shadow: inset 1000px 0 0 0 var(--bs-light) !important;
     color: var(--bs-primary) !important;
-}
+} */
 /*** Contact End ***/
 
 /*** Subscribe Start ***/
-.subscribe {
+/* .subscribe {
     background: linear-gradient(rgba(19, 53, 123, .6), rgba(19, 53, 123, .6)), url(../img/subscribe-img.jpg);
     background-attachment: fixed;
     background-position: center center;
@@ -1224,7 +1225,7 @@
     transform: translateY(-50%);
     margin-left: -50px;
     border: 1px solid var(--bs-white) !important;
-}
+} */
 /*** Subscribe End ***/
 
 /*** Footer Start ***/

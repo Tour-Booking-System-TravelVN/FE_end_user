@@ -19,6 +19,7 @@ $(function () {
                 });
 
                 $('#more-dt').click(function(){
+                    localStorage.setItem("index", true);
                     localStorage.setItem('foundtours', JSON.stringify(data));
                     // window.location.href = "foundtourlist.html";
                 })
@@ -69,7 +70,8 @@ $(function () {
             localStorage.setItem('foundtour', JSON.stringify(tourUnit));
             if(sessionStorage.getItem("tourChoiced"))
                 sessionStorage.removeItem("tourChoiced");
-            window.location.href = "tourunit.html";
+            localStorage.setItem("detail", true);
+            window.location.href = "tourunit.html?tourUnitId="+encodeURIComponent(tourUnit.tourUnitId);
         })
     }
 

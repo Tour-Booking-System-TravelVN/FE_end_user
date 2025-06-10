@@ -65,28 +65,28 @@ $(function () {
         function displayTourCard(tour) {
             let card = $('<div class="col-12 col-md-5 col-lg-5 col-xl-12 card shadow-primary mb-4 fix-height" style="min-height: 280px;"></div>');
 
-                // const placesToVisit = tour.tour.placesToVisit;
+            // const placesToVisit = tour.tour.placesToVisit;
 
-                let tourName = tour.tour.tourName;
-                if (tourName.length > 150)
-                    tourName = tourName.substring(0, 140) + "...";
+            let tourName = tour.tour.tourName;
+            if (tourName.length > 150)
+                tourName = tourName.substring(0, 140) + "...";
 
 
-                let placesToVisitSub = tour.tour.placesToVisit;
-                if (placesToVisitSub.length > 40)
-                    placesToVisitSub = placesToVisitSub.substring(0, 40) + "...";
+            let placesToVisitSub = tour.tour.placesToVisit;
+            if (placesToVisitSub.length > 40)
+                placesToVisitSub = placesToVisitSub.substring(0, 40) + "...";
 
-                let price = formatNumberWithDots(Math.round((tour.discount.discountUnit == "%") ?
-                    tour.adultTourPrice * (1 - tour.discount.discountValue / 100)
-                    :
-                    tour.adultTourPrice - tour.discount.discountValue));
+            let price = formatNumberWithDots(Math.round((tour.discount.discountUnit == "%") ?
+                tour.adultTourPrice * (1 - tour.discount.discountValue / 100)
+                :
+                tour.adultTourPrice - tour.discount.discountValue));
 
-                let adultTourPrice = formatNumberWithDots(Math.round(tour.adultTourPrice));
+            let adultTourPrice = formatNumberWithDots(Math.round(tour.adultTourPrice));
 
-                tourName = splitString(tourName, 90);
+            tourName = splitString(tourName, 90);
 
-                //d-flex  h-100
-                const htmlToInsert = `
+            //d-flex  h-100
+            const htmlToInsert = `
                 <div class="row">
                     <div class="col-12 col-xl-3 packages-img rounded-0 img-filter h-lg-100 w-30 img-lg-width pe-0 ps-0">
                         <img class="card-img-top object-fit-cover w-30" src="${tour.tour.firstImageUrl}"
@@ -129,25 +129,26 @@ $(function () {
                                 </div>
             `;
 
-                card.html(htmlToInsert);
+            card.html(htmlToInsert);
 
-                card.on({
-                    'click': function () {
-                        localStorage.setItem("foundtour", JSON.stringify(tour));
-                        window.location.href = "tourunit.html";
-                    }
-                })
-                // card.addEventListener('click', () => {
-                //     // Khi bấm vào thì hiện chi tiết
-                //     detailTitle.textContent = tour.title;
-                //     detailPrice.textContent = `Giá: ${tour.price.toLocaleString()} VND`;
-                //     detailDesc.textContent = `Mô tả: ${tour.description}`;
-                //     detailFull.textContent = `Chi tiết: ${tour.details}`;
-                //     detailBox.style.display = 'block';
-                // });
-                // let cardContainer = $('<div class="col-12 col-md-6 col-lg-12"></div>');
-                $('#card-list').append(card);
-                // tourList.appendChild(card);
+            card.on({
+                'click': function () {
+                    localStorage.setItem("foundtour", JSON.stringify(tour));
+                    localStorage.setItem("detail", true);
+                    window.location.href = "tourunit.html?tourUnitId=" + encodeURIComponent(tour.tourUnitId);
+                }
+            })
+            // card.addEventListener('click', () => {
+            //     // Khi bấm vào thì hiện chi tiết
+            //     detailTitle.textContent = tour.title;
+            //     detailPrice.textContent = `Giá: ${tour.price.toLocaleString()} VND`;
+            //     detailDesc.textContent = `Mô tả: ${tour.description}`;
+            //     detailFull.textContent = `Chi tiết: ${tour.details}`;
+            //     detailBox.style.display = 'block';
+            // });
+            // let cardContainer = $('<div class="col-12 col-md-6 col-lg-12"></div>');
+            $('#card-list').append(card);
+            // tourList.appendChild(card);
         }
 
         function formatNumberWithDots(numberString) {
@@ -169,9 +170,9 @@ $(function () {
     })
 
     function splitString(s, len) {
-                if (s.length > len) {
-                    return s.substring(0, len) + '...'
-                }
-                return s;
-            }
+        if (s.length > len) {
+            return s.substring(0, len) + '...'
+        }
+        return s;
+    }
 })
