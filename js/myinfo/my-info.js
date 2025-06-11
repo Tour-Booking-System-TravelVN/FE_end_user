@@ -18,6 +18,9 @@ $(function () {
                 let account = data.result;
                 let customer = account.c;
 
+                console.log(customer);
+
+                $('.customer-info-unique').eq(0).text(customer.firstname + " " + customer.lastname);
                 $('#c-fullName').val($('.customer-info-unique').eq(0).text());
 
                 $('#email').text(account.email);

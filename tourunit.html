@@ -1011,6 +1011,7 @@
                                 jQuery(function () {
                                     let foundtour = JSON.parse(localStorage.getItem("foundtour"));
                                     console.log(foundtour);
+                                    sessionStorage.setItem("tourChoiced", JSON.stringify(foundtour));
                                     let tourUnitId = foundtour.tourUnitId;
                                     const baseUrl = 'http://localhost:8080/booking/checkbeforebooking';
                                     const params = new URLSearchParams();

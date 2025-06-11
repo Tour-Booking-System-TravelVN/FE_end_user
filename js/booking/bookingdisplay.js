@@ -462,9 +462,11 @@ jQuery(function () {
         //Tham số cơ bản để tạo thanh toán
         let productName = tour.tourName;
         let description = foundtour.tourUnitId;
-        let returnUrl = "http://127.0.0.1:5500/success.html";
+        //let returnUrl = "http://127.0.0.1:5500/success.html";
+        let returnUrl = "http://127.0.0.1:5500/FE_end_user/success.html";
         let price = totalPrice;
-        let cancleUrl = "http://127.0.0.1:5500/cancel.html";
+        //let cancleUrl = "http://127.0.0.1:5500/cancel.html";
+        let cancleUrl = "http://127.0.0.1:5500/FE_end_user/cancel.html";
 
         //Tham số lưu đặt tour
         let arr1 = splitFullName($('#fullnameBF').val());

@@ -152,6 +152,11 @@ $(function () {
                                     let account = data.result;
                                     let customer = account.c;
 
+                                    let fullName = customer.firstname + " " + customer.lastname;
+                                    $('.customer-info-unique').eq(0).text(fullName);
+                                    $('#fullname').text(fullName);
+                                    
+                                    localStorage.setItem("fullname", fullName);
                                     $('#c-fullName').val($('.customer-info-unique').eq(0).text());
 
                                     $('#email').text(account.email);
